@@ -1,0 +1,9 @@
+date: slider olacak bu 1950 ile 2010 arası olmalı bence. filtreleme olacak
+duration: yine slider olacak 90dk ile 180dk arası falan olur. filtreleme olacak
+genre: bunu buton veya başka bir şey yap ama birden fazla genre seçilebilir olsun. Bu da puanlama olacak
+imdb rating: slider olacak. 0 ile 8 arası seçilsin bence. bu da filtreleme olmalı. 
+metascore rating: slider olacak. 0 ile 90 arası olur. filtreleme olacak.
+country: language: director: benzer tarzda olur nasıl yaparsın bilmiyorum ama bence yine birden fazla şey seçilebilir olsun. yine puanlama olsun belki dil filtreleme olur. 
+popularity: cult classic, popular, hidden gem ve less known diye ayırdım kategorilere. bu da puanlama olacak.
+actors and actresses: bu senin fikrinde nasıl istioyrsan öyle yap. Ama puanalama olsun
+warnings: bu da birden fazla tercih yapabileceğin bir sistem olsun. filtreleme olacak bunlar da
