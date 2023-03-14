@@ -8,7 +8,7 @@ import ResultComponent from "../components/ResultComponent";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const devUrl = "http://localhost:5000/api/v1/movies/?";
+const devUrl = "https://cinemasuggest.herokuapp.com//api/v1/movies/?";
 
 const handlePassingData = (passData) => {
   
