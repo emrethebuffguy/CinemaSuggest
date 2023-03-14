@@ -18,11 +18,14 @@ app.use(`/api/v1/movies`, movieRouter);
 app.use(express.static(path.resolve(__dirname, './client/build')));
 
 //The 404 Route (ALWAYS Keep this as the last route)
-app.get("*", function (req, res) {
-    res.status(404).json({
-      status: "404 not found",
-      message: "please try again later",
-    });
-  });
+// app.get("*", function (req, res) {
+//     res.status(404).json({
+//       status: "404 not found",
+//       message: "please try again later",
+//     });
+//   });
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+});
 
 module.exports = app;
