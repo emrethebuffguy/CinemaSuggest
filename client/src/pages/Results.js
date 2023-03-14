@@ -39,7 +39,7 @@ const Results = (props) => {
         setLoading(true);
         const data = handlePassingData(passData);
         const response = await fetch(
-          `${devUrl}durationFilter=${data.duration.join(
+          `http://cinemasuggest.herokuapp.com/api/v1/movies/?durationFilter=${data.duration.join(
             ","
           )}&date=${data.date.join(",")}&genres=${data.genres}&imdbRate=${
             data.imdbscore
