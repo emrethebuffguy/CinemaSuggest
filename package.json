@@ -8,8 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run start:dev\" \"cd client && npm start\"",
-    "start:dev": "nodemon server.js",
-    
+    "start:dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
