@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import computer from "../assets/computer.png";
+import { Link } from "react-router-dom";
 const BottomComp = () => {
   return (
     <BottomCompContainer>
@@ -13,7 +14,7 @@ const BottomComp = () => {
             watched the suggested movies just mark them as ‘watched’ or discard
             them and CinemaSuggest will come up with new ones.
           </h4>
-          <button>Take The Test</button>
+          <Link className="sbmt" to="/movietest">Take The Test</Link>
         </div>
         <img src={computer} alt="computer" />
       </div>
@@ -49,7 +50,7 @@ const BottomCompContainer = styled.div`
   img {
     width: 700px;
   }
-  button {
+ .sbmt {
     background-color: #b70304;
     color: white;
     

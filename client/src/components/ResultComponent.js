@@ -1,38 +1,62 @@
 import React from "react";
-import example from "../assets/joker.png";
-import styled from "styled-components";
-import {BsFillTrashFill} from "react-icons/bs"
 
+import styled from "styled-components";
+import { BsFillTrashFill } from "react-icons/bs";
 
 import Tooltip from "@mui/material/Tooltip";
 
-const ResultComponent = () => {
+const ResultComponent = (props) => {
+  const {resultData, setResultData,arrindex} = props;
+  const handleDelete = (e) => {
+    console.log(arrindex)
+    console.log(resultData)
+    const newData = resultData.filter((item,index)=>{
+      if(arrindex !== index){
+        return item
+      }
+    })
+    setResultData(newData)
+  };
+
   return (
     <ResultContainer>
-      <img src={example} alt="" />
+      <img src={props.poster_link} alt="" />
       <div className="info">
-        <h3 className="header">The Shawshank Redemption</h3>
+        <h3 className="header">{props.title}</h3>
         <div className="genre-date">
-          <span className="info-span">Drama</span>
-          <span className="info-span">1994</span>
-          <span className="info-span">142 min</span>
-          <span className="info-span">country</span>
-          <span className="info-span">language</span>
-          <span className="info-span">movie</span>
+          {props.genre.map((item, index) => {
+            return (
+              <span key={index} className="info-span">
+                {item}
+              </span>
+            );
+          })}
+
+          <span className="info-span">{props.date}</span>
+          <span className="info-span">{props.duration}min</span>
+          <span className="info-span">{props.country}</span>
+          <span className="info-span">{props.language}</span>
+          <span className="info-span">{props.movie_type}</span>
         </div>
         <div className="director-star">
           <p className="dir">
-            <span className="bold">Director</span>: Frank Darabont
+            <span className="bold">Director</span>: {props.director}
           </p>
           <p className="dir">
-            <span className="bold">Stars</span>: 50 Cent
+            <span className="bold">Stars</span>: {props.actors.join(", ")}
           </p>
         </div>
         <div className="bottom-info">
           <Tooltip title="I do not like this, remove from the movie list.">
-            <button className="remove"> <BsFillTrashFill/></button>
+            <button onClick={handleDelete} className="remove">
+              <BsFillTrashFill />
+              
+            </button>
           </Tooltip>
-          <p className="match">94%</p>
+
+          <p className="match">
+            {Math.floor((props.points / props.maxPoints) * 100)}%
+          </p>
         </div>
       </div>
     </ResultContainer>
@@ -45,18 +69,23 @@ const ResultContainer = styled.section`
   height: auto;
   display: grid;
   grid-template-columns: 1fr 3fr;
-  
-  img {
-    height:100%;
-    width:100%;
-  }
+  transition: all 0.5s linear;
 
+  img {
+    max-height: 400px;
+    width: auto;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .bold {
     font-weight: bold;
   }
 
   .director-star {
-    margin:0 0.5rem;
+    margin: 0 0.5rem;
   }
 
   .dir {
@@ -78,7 +107,7 @@ const ResultContainer = styled.section`
     column-gap: 0.5rem;
     margin: 0.5rem;
   }
-  
+
   .info-span {
     background: #b70304;
     text-align: center;
@@ -87,15 +116,18 @@ const ResultContainer = styled.section`
     border-radius: 15px;
     padding: 5px;
   }
-  @media (max-width:992px){
+  @media (max-width: 992px) {
     grid-template-columns: 1fr 2fr;
-    .genre-date{
-        grid-template-columns: 1fr 1fr;
+    .genre-date {
+      grid-template-columns: 1fr 1fr;
     }
-    .info-span{
-        width:100px;
+    .info-span {
+      width: 100px;
     }
-}
+    img {
+      width: 100%;
+    }
+  }
   .bottom-info {
     margin: 0.5rem;
     display: flex;
@@ -108,7 +140,7 @@ const ResultContainer = styled.section`
     padding: 5px 10px;
     text-align: center;
     font-weight: bold;
-    line-height:40px;
+    line-height: 40px;
   }
 
   .remove {
@@ -120,10 +152,10 @@ const ResultContainer = styled.section`
     cursor: pointer;
   }
   .remove:hover {
-    color:white;
+    color: white;
   }
-  p{
-    margin-bottom:0.2rem;
+  p {
+    margin-bottom: 0.2rem;
   }
 `;
 

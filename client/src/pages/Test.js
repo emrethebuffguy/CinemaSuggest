@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { genre } from "../utils/genres";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Slider } from "@mui/material";
 import { countries } from "../utils/countries";
 import { languages } from "../utils/languages";
@@ -26,6 +26,8 @@ const Test = () => {
   const [genres, setGenres] = useState([]);
 
   const [date, setDate] = useState([1960, 2010]);
+  const [duration, setDuration] = useState([60,170]);
+
   const [metascore, setMetascore] = useState(70);
   const [imdbscore, setImdbScore] = useState(7);
 
@@ -50,7 +52,7 @@ const Test = () => {
   const [activeWarnings, setActiveWarnings] = useState(
     new Array(warnings.length).fill(false)
   );
-
+  const [passData,setPassData] = useState({});
   
 
   const genreFunc = (position) => {
@@ -99,6 +101,9 @@ const Test = () => {
   const handleDateChange = (event, newValue) => {
     setDate(newValue);
   };
+  const handleDurationChange= (event,newValue)=>{
+    setDuration(newValue);
+  }
 
   const handleImdbChange = (event, newValue) => {
     setImdbScore(newValue);
@@ -140,6 +145,9 @@ const Test = () => {
     setActors(newActors);
   };
 
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   
 
   //TO - DO
@@ -179,6 +187,20 @@ const Test = () => {
             onChange={handleDateChange}
             valueLabelDisplay="auto"
           />
+          <button className="dmbtn" onClick={()=>{setDate([1910,2023])}}>Doesn't Matter</button>
+        </TestContainer>
+        <TestContainer>
+          <Picker>Duration </Picker>
+          <h4>Specify the minimum and maximum duration you prefer.</h4>
+          <Slider
+            className="slider"
+            min={20}
+            max={300}
+            value={duration}
+            onChange={handleDurationChange}
+            valueLabelDisplay="auto"
+          />
+          <button className="dmbtn" onClick={()=>{setDuration([20,300])}}>Doesn't Matter</button>
         </TestContainer>
         <DoubleTestContainer>
           <div>
@@ -212,25 +234,25 @@ const Test = () => {
           <PopularityButtons>
             <button
               className={popularityActive ===0 ? "active" : "none"}
-              onClick={() => handlePopularity("popular", 0)}
+              onClick={() => handlePopularity("Popular", 0)}
             >
               Popular
             </button>
             <button
               className={popularityActive === 1 ? "active" : "none"}
-              onClick={() => handlePopularity("less known", 1)}
+              onClick={() => handlePopularity("Less known", 1)}
             >
               Less Known
             </button>
             <button
               className={popularityActive === 2 ? "active" : "none"}
-              onClick={() => handlePopularity("hidden gem", 2)}
+              onClick={() => handlePopularity("Hidden gem", 2)}
             >
               Hidden Gem
             </button>
             <button
               className={popularityActive === 3 ? "active" : "none"}
-              onClick={() => handlePopularity("cult classic", 3)}
+              onClick={() => handlePopularity("Cult classic", 3)}
             >
               Cult Classic
             </button>
@@ -432,11 +454,27 @@ const Test = () => {
             console.log(director);
             console.log(actors);
             console.log(featureState, warningState);
+            console.log(duration)
+            setPassData({
+              genres:genres,
+              date:date,
+              duration:duration,
+              imdbscore:imdbscore,
+              metascore:metascore,
+              popularity:popularity,
+              country:country,
+              language:language,
+              type:type,
+              director:director,
+              actors:actors,
+              warningState:warningState,
+              featureState:featureState
+            })
           }}
         >
-          TEST BUTTON
+          SAVE PREFERENCES
         </button>
-        <Link to="/results" className="submitbtn">
+        <Link state={passData} to="/results" className="submitbtn">
           Find Me Movies
         </Link>
       </Wrapper>
