@@ -28,4 +28,12 @@ app.get('/', (req, res) => { //very important code for react
   res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 });
 
+app.get('/movietest', (req, res) => { //very important code for react
+  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+});
+
+app.get('/results', (req, res) => { //very important code for react
+  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+});
+
 module.exports = app;
