@@ -11,11 +11,11 @@ const movieRouter = require("./routes/movieroutes");
 //   }
 //   next();
 // };
-app.use(cors());
+app.use(cors({ origin: "https://cinemasuggest.herokuapp.com" }));
 //app.use(wwwRedirect);
-app.use(express.json()); 
+app.use(express.json());
 app.use(`/api/v1/movies`, movieRouter);
-app.use(express.static(path.resolve(__dirname, './client/build')));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 //The 404 Route (ALWAYS Keep this as the last route)
 // app.get("*", function (req, res) {
@@ -24,16 +24,19 @@ app.use(express.static(path.resolve(__dirname, './client/build')));
 //       message: "please try again later",
 //     });
 //   });
-app.get('/', (req, res) => { //very important code for react
-  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+app.get("/", (req, res) => {
+  //very important code for react
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
-app.get('/movietest', (req, res) => { //very important code for react
-  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+app.get("/movietest", (req, res) => {
+  //very important code for react
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
-app.get('/results', (req, res) => { //very important code for react
-  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+app.get("/results", (req, res) => {
+  //very important code for react
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
 module.exports = app;
