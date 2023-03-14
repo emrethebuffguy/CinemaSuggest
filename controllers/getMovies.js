@@ -10,7 +10,7 @@ var queryObj = {
 
 exports.getMovies = async (req,res)=>{
     //filtrelerde eğer doesnt matter işaretlenirse olabilecek en esnek sınırları koy.
-    var {durationFilter,date,languages,imdbRate,metaRate,warnings,genres,actors,popularity,country,popularity,director,popularity,features} = req.query; // duration filter will be a string with format small,big
+    var {durationFilter,date,languages,imdbRate,metaRate,warnings,genres,actors,popularity,country,popularity,director,popularity,features,type} = req.query; // duration filter will be a string with format small,big
     var durationFilter = durationFilter.split(",");
     var date = date.split(",");
     features = features.split(",");
@@ -28,10 +28,10 @@ exports.getMovies = async (req,res)=>{
         popularity:popularity
         })
     
-    var maxPoints = totalPoints(genres,actors,popularity,country,director,features) 
+    var maxPoints = totalPoints(genres,actors,popularity,country,director,features,type) 
     
     //calculate points.
-    data.forEach((movie)=>{
+    data.forEach((movie,index)=>{
         features.forEach((feature)=>{
             if(movie.features.includes(feature)){
                 movie.points += 5
@@ -61,6 +61,9 @@ exports.getMovies = async (req,res)=>{
         else{
             movie.noMatch.push(`${popularity} popularity`)
         }
+        if(movie.movie_type === type){
+            movie.points += 10;
+        }
         country.forEach((country)=>{
             if(movie.country.includes(country)){
                 movie.points += 8
@@ -84,14 +87,19 @@ exports.getMovies = async (req,res)=>{
         else{
             movie.noMatch.push("director")
         }
+
+        console.log(data[0])
+        console.log(movie)
     })
     let sortedData = data.sort((m1,m2)=>(m1.points < m2.points) ? 1 :  (m1.points > m2.points) ? -1  : 0);
-    console.log(maxPoints);
+    sortedData = sortedData.slice(0,50);
+    
+    
     res.json({
         
         status: "success",
-        length: data.length,
-        data: sortedData.slice(0,21),
+        length: sortedData.length,
+        data: sortedData,
         maxPoints: maxPoints
     });
 }

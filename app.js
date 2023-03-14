@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-
+const cors = require("cors");
 const movieRouter = require("./routes/movieroutes");
 
 function wwwRedirect(req, res, next) { /* www redirects to :// */
@@ -11,7 +11,7 @@ function wwwRedirect(req, res, next) { /* www redirects to :// */
   }
   next();
 };
-
+app.use(cors());
 app.use(wwwRedirect);
 app.use(express.json()); 
 app.use(`/api/v1/movies`, movieRouter);

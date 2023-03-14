@@ -15,7 +15,7 @@ const movieSchema = new mongoose.Schema({
     genre:{
         type: [String]
     },
-    imdb_rating:{
+    imdb_score:{
         type:Number
     },
     meta_score: Number,
