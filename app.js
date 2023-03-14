@@ -4,13 +4,13 @@ const path = require("path");
 const cors = require("cors");
 const movieRouter = require("./routes/movieroutes");
 
-function wwwRedirect(req, res, next) { /* www redirects to :// */
-  if (req.headers.host.slice(0, 4) === 'www.') {
-      var newHost = req.headers.host.slice(4);
-      return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
-  }
-  next();
-};
+// function wwwRedirect(req, res, next) { /* www redirects to :// */
+//   if (req.headers.host.slice(0, 4) === 'www.') {
+//       var newHost = req.headers.host.slice(4);
+//       return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
+//   }
+//   next();
+// };
 app.use(cors());
 app.use(wwwRedirect);
 app.use(express.json()); 
