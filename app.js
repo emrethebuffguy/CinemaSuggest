@@ -9,7 +9,10 @@ if(process.env.NODE_ENV === "development"){
 
 }
 else{
-  app.use(cors({ origin: "https://cinemasuggest.herokuapp.com" }));
+  app.use(cors({
+    origin: 'https://cinemasuggest.herokuapp.com',
+    optionsSuccessStatus: 200
+  }));
 }
 app.use(express.static(path.resolve(__dirname, "./client/build")));
 app.use(express.json());
