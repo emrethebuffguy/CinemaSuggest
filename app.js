@@ -5,19 +5,19 @@ const cors = require("cors");
 const movieRouter = require("./routes/movieroutes");
 
 //dev
-app.use(
-  cors({
-    origin: "http://localhost:3000",
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000",
 
-    optionsSuccessStatus: 200,
-  })
-);
+//     optionsSuccessStatus: 200,
+//   })
+// );
 
 //production
-//   app.use(cors({
-//     origin: 'https://cinemasuggest.herokuapp.com',
-//     optionsSuccessStatus: 200
-//   }));
+  app.use(cors({
+    origin: 'https://cinemasuggest.herokuapp.com',
+    optionsSuccessStatus: 200
+  }));
 
 app.use(express.static(path.resolve(__dirname, "./client/build")));
 app.use(express.json());

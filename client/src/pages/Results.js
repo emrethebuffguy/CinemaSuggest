@@ -41,7 +41,7 @@ const Results = (props) => {
         setLoading(true);
         const data = handlePassingData(passData);
         const response = await fetch(
-          `${localUrl}durationFilter=${data.duration.join(
+          `${devUrl}durationFilter=${data.duration.join(
             ","
           )}&date=${data.date.join(",")}&genres=${data.genres}&imdbRate=${
             data.imdbscore
