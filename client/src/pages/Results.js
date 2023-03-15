@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 
 const devUrl = "http://cinemasuggest.herokuapp.com/api/v1/movies/?";
 
+const localUrl = "http://localhost:5000/api/v1/movies/?"
+
 const handlePassingData = (passData) => {
   
   const genres = passData.state.genres.join(",");

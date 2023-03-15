@@ -12,7 +12,13 @@ const movieRouter = require("./routes/movieroutes");
 //   next();
 // };
 app.use(express.json());
-app.use(cors({ origin: "https://cinemasuggest.herokuapp.com" }));
+if(process.env.NODE_ENV === "development"){
+  app.use(cors({ origin: "http://localhost:3000" }));
+
+}
+else{
+  app.use(cors({ origin: "https://cinemasuggest.herokuapp.com/results" }));
+}
 //app.use(wwwRedirect);
 app.use(`/api/v1/movies`, movieRouter);
 app.use(express.static(path.resolve(__dirname, "./client/build")));
