@@ -11,9 +11,9 @@ const movieRouter = require("./routes/movieroutes");
 //   }
 //   next();
 // };
+app.use(express.json());
 app.use(cors({ origin: "https://cinemasuggest.herokuapp.com" }));
 //app.use(wwwRedirect);
-app.use(express.json());
 app.use(`/api/v1/movies`, movieRouter);
 app.use(express.static(path.resolve(__dirname, "./client/build")));
 

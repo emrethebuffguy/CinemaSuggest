@@ -443,18 +443,6 @@ const Test = () => {
         </TestContainer>
         <button
           onClick={() => {
-            console.log(genres);
-            console.log(date);
-            console.log(imdbscore);
-            console.log(metascore);
-            console.log(popularity);
-            console.log(country);
-            console.log(language);
-            console.log(type);
-            console.log(director);
-            console.log(actors);
-            console.log(featureState, warningState);
-            console.log(duration)
             setPassData({
               genres:genres,
               date:date,
