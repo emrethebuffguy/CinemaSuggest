@@ -17,11 +17,11 @@ if(process.env.NODE_ENV === "development"){
 
 }
 else{
-  app.use(cors({ origin: "https://cinemasuggest.herokuapp.com/results" }));
+  app.use(cors({ origin: "https://cinemasuggest.herokuapp.com" }));
 }
 //app.use(wwwRedirect);
 app.use(`/api/v1/movies`, movieRouter);
-app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.use(express.static("/client/build"));
 
 //The 404 Route (ALWAYS Keep this as the last route)
 // app.get("*", function (req, res) {
