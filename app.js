@@ -9,7 +9,7 @@ if(process.env.NODE_ENV === "development"){
 
 }
 else{
-  app.use(cors({ origin: "https://cinemasuggest.herokuapp.com/results" }));
+  app.use(cors({ origin: "https://cinemasuggest.herokuapp.com" }));
 }
 app.use(express.static(path.resolve(__dirname, "./client/build")));
 app.use(express.json());
@@ -26,26 +26,9 @@ app.use(express.json());
 app.use(`/api/v1/movies`, movieRouter);
 
 
-//The 404 Route (ALWAYS Keep this as the last route)
-// app.get("*", function (req, res) {
-//     res.status(404).json({
-//       status: "404 not found",
-//       message: "please try again later",
-//     });
-//   });
 app.get("*", (req, res) => {
   //very important code for react
   res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
-
-// app.get("/movietest", (req, res) => {
-//   //very important code for react
-//   res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-// });
-
-// app.get("/results", (req, res) => {
-//   //very important code for react
-//   res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-// });
 
 module.exports = app;

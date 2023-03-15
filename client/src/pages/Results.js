@@ -8,12 +8,11 @@ import ResultComponent from "../components/ResultComponent";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const devUrl = "http://cinemasuggest.herokuapp.com/api/v1/movies/?";
+const devUrl = "https://cinemasuggest.herokuapp.com/api/v1/movies/?";
 
-const localUrl = "http://localhost:5000/api/v1/movies/?"
+const localUrl = "http://localhost:5000/api/v1/movies/?";
 
 const handlePassingData = (passData) => {
-  
   const genres = passData.state.genres.join(",");
   const warningState = passData.state.warningState.join(",");
   const featureState = passData.state.featureState.join(",");
@@ -32,8 +31,8 @@ const Results = (props) => {
   let passData = useLocation();
 
   const [loading, setLoading] = useState(false);
-  const [resultData,setResultData] = useState([]);
-  const [maxPoints,setMaxPoints] = useState(0);
+  const [resultData, setResultData] = useState([]);
+  const [maxPoints, setMaxPoints] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +40,7 @@ const Results = (props) => {
         setLoading(true);
         const data = handlePassingData(passData);
         const response = await fetch(
-          `${devUrl}durationFilter=${data.duration.join(
+          `https://cinemasuggest.herokuapp.com/api/v1/movies/?durationFilter=${data.duration.join(
             ","
           )}&date=${data.date.join(",")}&genres=${data.genres}&imdbRate=${
             data.imdbscore
@@ -51,12 +50,9 @@ const Results = (props) => {
             data.country
           }&actors=${data.actors}&features=${data.featureState}&director=${
             data.director
-          }&type=${data.type}`,{
-            headers: {"Content-Type": "application/json"},
-            method: 'GET'
-          }
+          }&type=${data.type}`
         );
-        const newData = await response.json()
+        const newData = await response.json();
         setResultData(newData.data);
         setMaxPoints(newData.maxPoints);
         setLoading(false);
@@ -65,22 +61,30 @@ const Results = (props) => {
       }
     };
     fetchData();
-  },[]);
+  }, []);
 
   if (!loading) {
-    
     return (
       <>
         <Navbar />
         <ResultsContainer>
-          {
-            resultData.map((data,index)=>{ 
-              if(index <= 10){
-              return <ResultComponent arrindex={index} resultData={resultData} setResultData={setResultData} key={index} {...data} maxPoints={maxPoints}/>
-              }
-            })
-          }
-          <Link className="test-retake" to="/movietest">Retake The Test</Link>
+          {resultData.map((data, index) => {
+            if (index <= 10) {
+              return (
+                <ResultComponent
+                  arrindex={index}
+                  resultData={resultData}
+                  setResultData={setResultData}
+                  key={index}
+                  {...data}
+                  maxPoints={maxPoints}
+                />
+              );
+            }
+          })}
+          <Link className="test-retake" to="/movietest">
+            Retake The Test
+          </Link>
         </ResultsContainer>
         <Footer />
       </>
@@ -106,7 +110,7 @@ const ResultsContainer = styled.div`
   @media (max-width: 992px) {
     width: 95%;
   }
-  .test-retake{
+  .test-retake {
     padding: 4px 52px;
     border-radius: 10px;
     background-color: #b70304;
