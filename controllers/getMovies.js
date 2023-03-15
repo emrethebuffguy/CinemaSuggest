@@ -88,8 +88,10 @@ exports.getMovies = async (req,res)=>{
             movie.noMatch.push("director")
         }
 
-        console.log(data[0])
-        console.log(movie)
+        
+    })
+    data.forEach((item,index)=>{ // FIX
+        item.points += 18
     })
     let sortedData = data.sort((m1,m2)=>(m1.points < m2.points) ? 1 :  (m1.points > m2.points) ? -1  : 0);
     sortedData = sortedData.slice(0,50);

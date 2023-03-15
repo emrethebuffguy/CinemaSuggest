@@ -1,6 +1,7 @@
-import { useRef,useEffect,useState } from "react";
+import { useEffect,useState } from "react";
 import styled from "styled-components";
 import imgUrl from '../assets/spiderman.jpg';
+import { Link } from "react-router-dom";
 
 import imgTwo from "../assets/slider3.png"
 import imgThree from "../assets/slider4.png"
@@ -34,7 +35,7 @@ const Heroslider = () => {
         </div>
         <h1>CHOOSING A MOVIE HAS<br/> NEVER BEEN EASIER.</h1>
         <p>Stop scrolling hours only to find a movie you do not like. <br/>Take the test and let it decide for you.</p>
-        <button>Take The Test</button>
+        <Link className="submitbtn" to="/movietest">Take The Test</Link>
     </HeroContainer>
   );
 };
@@ -94,7 +95,7 @@ const HeroContainer = styled.div`
     left:10%;
     color:white;
   }
-  button{
+  .submitbtn{
     background-color: #B70304;
     color:white;
     position:absolute;
@@ -106,7 +107,7 @@ const HeroContainer = styled.div`
     cursor:pointer;
     border:none;
   }
-  button:hover{
+  .submitbtn:hover{
     background-color: #ed8554;
   }
 

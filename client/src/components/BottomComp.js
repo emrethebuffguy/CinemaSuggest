@@ -62,7 +62,7 @@ const BottomCompContainer = styled.div`
     cursor: pointer;
     border: none;
   }
-  button:hover {
+  .sbmt:hover {
     background-color: #ed8554;
   }
 

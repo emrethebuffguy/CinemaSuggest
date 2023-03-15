@@ -4,15 +4,20 @@ const path = require("path");
 const cors = require("cors");
 const movieRouter = require("./routes/movieroutes");
 
-// if(process.env.NODE_ENV === "development"){
-//   app.use(cors({ origin: "http://localhost:3000" }));
+//dev
+app.use(
+  cors({
+    origin: "http://localhost:3000",
 
-// }
+    optionsSuccessStatus: 200,
+  })
+);
 
-  app.use(cors({
-    origin: 'https://cinemasuggest.herokuapp.com',
-    optionsSuccessStatus: 200
-  }));
+//production
+//   app.use(cors({
+//     origin: 'https://cinemasuggest.herokuapp.com',
+//     optionsSuccessStatus: 200
+//   }));
 
 app.use(express.static(path.resolve(__dirname, "./client/build")));
 app.use(express.json());
@@ -24,10 +29,8 @@ app.use(express.json());
 //   next();
 // };
 
-
 //app.use(wwwRedirect);
 app.use(`/api/v1/movies`, movieRouter);
-
 
 app.get("*", (req, res) => {
   //very important code for react

@@ -8,6 +8,7 @@ import ResultComponent from "../components/ResultComponent";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+
 const devUrl = "https://cinemasuggest.herokuapp.com/api/v1/movies/?";
 
 const localUrl = "http://localhost:5000/api/v1/movies/?";
@@ -40,7 +41,7 @@ const Results = (props) => {
         setLoading(true);
         const data = handlePassingData(passData);
         const response = await fetch(
-          `https://cinemasuggest.herokuapp.com/api/v1/movies/?durationFilter=${data.duration.join(
+          `${localUrl}durationFilter=${data.duration.join(
             ","
           )}&date=${data.date.join(",")}&genres=${data.genres}&imdbRate=${
             data.imdbscore
@@ -68,20 +69,24 @@ const Results = (props) => {
       <>
         <Navbar />
         <ResultsContainer>
-          {resultData.map((data, index) => {
-            if (index <= 10) {
-              return (
-                <ResultComponent
-                  arrindex={index}
-                  resultData={resultData}
-                  setResultData={setResultData}
-                  key={index}
-                  {...data}
-                  maxPoints={maxPoints}
-                />
-              );
-            }
-          })}
+          
+            {resultData.map((data, index) => {
+              if (index <= 10) {
+                return (
+                  
+                    <ResultComponent
+                      arrindex={index}
+                      resultData={resultData}
+                      setResultData={setResultData}
+                      key={index}
+                      {...data}
+                      maxPoints={maxPoints}
+                    />
+                  
+                );
+              }
+            })}
+          
           <Link className="test-retake" to="/movietest">
             Retake The Test
           </Link>
@@ -106,9 +111,15 @@ const ResultsContainer = styled.div`
   flex-direction: column;
   column-gap: 2rem;
   row-gap: 2rem;
-  transition: all 0.5s linear;
+  transition: transform 0.3s ease-in-out;
   @media (max-width: 992px) {
     width: 95%;
+  }
+  .trans {
+    display: flex;
+    flex-direction: column;
+    column-gap: 2rem;
+    row-gap: 2rem;
   }
   .test-retake {
     padding: 4px 52px;
@@ -117,6 +128,10 @@ const ResultsContainer = styled.div`
     color: white;
     margin-left: 10%;
     font-size: 24px;
+  }
+
+  .on-destroy{
+    transform: translateX(200%);
   }
 `;
 

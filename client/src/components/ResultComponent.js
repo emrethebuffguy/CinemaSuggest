@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 
 import styled from "styled-components";
 import { BsFillTrashFill } from "react-icons/bs";
@@ -6,20 +6,26 @@ import { BsFillTrashFill } from "react-icons/bs";
 import Tooltip from "@mui/material/Tooltip";
 
 const ResultComponent = (props) => {
-  const {resultData, setResultData,arrindex} = props;
+  const [onDestroy,setOnDestroy] = useState(false);
+  
+  const { resultData, setResultData, arrindex } = props;
   const handleDelete = (e) => {
-    console.log(arrindex)
-    console.log(resultData)
-    const newData = resultData.filter((item,index)=>{
-      if(arrindex !== index){
-        return item
-      }
-    })
-    setResultData(newData)
+    setOnDestroy(true);
+    setTimeout(()=>{
+      const newData = resultData.filter((item, index) => {
+        if (arrindex !== index) {
+          return item;
+        }
+      });
+      setResultData(newData);
+      setOnDestroy(false);
+    },500)
+    
   };
 
+
   return (
-    <ResultContainer>
+    <ResultContainer className={onDestroy? "on-destroy": null}>
       <img src={props.poster_link} alt="" />
       <div className="info">
         <h3 className="header">{props.title}</h3>
@@ -50,7 +56,6 @@ const ResultComponent = (props) => {
           <Tooltip title="I do not like this, remove from the movie list.">
             <button onClick={handleDelete} className="remove">
               <BsFillTrashFill />
-              
             </button>
           </Tooltip>
 
@@ -69,7 +74,7 @@ const ResultContainer = styled.section`
   height: auto;
   display: grid;
   grid-template-columns: 1fr 3fr;
-  transition: all 0.5s linear;
+  transition: all 0.3s ease-in-out;
 
   img {
     max-height: 400px;

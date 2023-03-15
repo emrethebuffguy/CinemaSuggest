@@ -53,7 +53,8 @@ const Test = () => {
     new Array(warnings.length).fill(false)
   );
   const [passData,setPassData] = useState({});
-  
+  const [submitted,setSubmitted] = useState(false);
+  const [missingRequired,setMissingRequired] = useState(false);
 
   const genreFunc = (position) => {
     const updatedState = genreActive.map((item, index) => {
@@ -144,6 +145,36 @@ const Test = () => {
     });
     setActors(newActors);
   };
+
+  const handleSave = ()=>{
+    const pop = popularity === ""
+    const cnt = country === ""
+    const lang = language === ""
+    const gnr = genres === []
+
+    if(pop || cnt || lang || gnr){
+      setMissingRequired(true);
+    }
+    else{
+      setMissingRequired(false);
+      setPassData({
+        genres:genres,
+        date:date,
+        duration:duration,
+        imdbscore:imdbscore,
+        metascore:metascore,
+        popularity:popularity,
+        country:country,
+        language:language,
+        type:type,
+        director:director,
+        actors:actors,
+        warningState:warningState,
+        featureState:featureState
+      })
+      setSubmitted(true);
+    }
+  }
 
   useEffect(()=>{
     window.scrollTo(0, 0);
@@ -257,7 +288,7 @@ const Test = () => {
               Cult Classic
             </button>
           </PopularityButtons>
-          <button className="dmbtn" onClick={()=>{setPopularity(""); setPopularityActive([false,false,false,false])}}>Doesn't Matter</button>
+          
         </TestContainer>
         <TestContainer>
           <Picker>COUNTRY</Picker>
@@ -282,7 +313,7 @@ const Test = () => {
               </Select>
             </FormControl>
           </Box>
-          <button className="dmbtn" onClick={()=>{setCountry("")}}>Doesn't Matter</button>
+          
         </TestContainer>
         <TestContainer>
           <Picker>LANGUAGE</Picker>
@@ -307,7 +338,7 @@ const Test = () => {
               </Select>
             </FormControl>
           </Box>
-          <button className="dmbtn" onClick={()=>{setLanguage("")}}>Doesn't Matter</button>
+          
         </TestContainer>
         <TestContainer>
           <Picker>MOVIE TYPE</Picker>
@@ -419,7 +450,7 @@ const Test = () => {
               );
             })}
           </WarningButtons>
-          
+          <button className="dmbtn" onClick={()=>setWarningState([])}>Doesn't Matter</button>
         </TestContainer>
         <TestContainer>
           <Picker>FEATURES</Picker>
@@ -439,30 +470,15 @@ const Test = () => {
               );
             })}
           </FeatureButtons>
-          
+          <button className="dmbtn" onClick={()=>setFeatureState([])}>Doesn't Matter</button>
         </TestContainer>
-        <button
-          onClick={() => {
-            setPassData({
-              genres:genres,
-              date:date,
-              duration:duration,
-              imdbscore:imdbscore,
-              metascore:metascore,
-              popularity:popularity,
-              country:country,
-              language:language,
-              type:type,
-              director:director,
-              actors:actors,
-              warningState:warningState,
-              featureState:featureState
-            })
-          }}
+        <button className="submitbtn"
+          onClick={handleSave}
         >
           SAVE PREFERENCES
         </button>
-        <Link state={passData} to="/results" className="submitbtn">
+        <p className="missing">{missingRequired ? "Genre, Popularity, Country and Language Fields are mandatory." : null}</p>
+        <Link style={submitted ? null :{pointerEvents:"none", backgroundColor:"gray"}} state={passData} to="/results" className="submitbtn">
           Find Me Movies
         </Link>
       </Wrapper>
@@ -474,17 +490,25 @@ const Test = () => {
 const Wrapper = styled.div`
   margin-top: 3rem;
   margin-bottom: 3rem;
+
   h1 {
     text-align: center;
     color: white;
   }
+  
   .submitbtn {
     padding: 4px 52px;
     border-radius: 10px;
     background-color: #b70304;
     color: white;
-    margin-left: 10%;
+    margin-left: 20%;
     font-size: 24px;
+    cursor:pointer;
+    margin-bottom:1rem;
+  }
+  .missing{
+    margin-left:20%;
+    color:white;
   }
   .dmbtn{
     padding:3px 30px;
@@ -509,7 +533,7 @@ const Picker = styled.h3`
 `;
 
 const TestContainer = styled.div`
-  width: 80%;
+  width: 60%;
   margin: 3rem auto;
   border-bottom: 1px solid white;
 
@@ -537,6 +561,7 @@ const TestContainer = styled.div`
   .menuitem {
     padding: 8px;
     background: rgba(255, 255, 255, 0.88);
+    margin-bottom:2.5rem;
   }
   button:hover {
     border: 1px solid red;
@@ -604,7 +629,7 @@ const DoubleTestContainer = styled.div`
   display: flex;
   border-bottom: 1px solid white;
   margin: 1rem auto;
-  width: 82%;
+  width: 62%;
 
   .actors-box {
     display: grid;
@@ -681,6 +706,7 @@ const PopularityButtons = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-top: 2.5rem;
+  margin-bottom:2.5rem;
 
 `;
 
