@@ -49,7 +49,10 @@ const Results = (props) => {
             data.country
           }&actors=${data.actors}&features=${data.featureState}&director=${
             data.director
-          }&type=${data.type}`
+          }&type=${data.type}`,{
+            headers: {"Content-Type": "application/json"},
+            method: 'GET'
+          }
         );
         const newData = await response.json()
         setResultData(newData.data);
