@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { genre } from "../utils/genres";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Slider } from "@mui/material";
 import { countries } from "../utils/countries";
 import { languages } from "../utils/languages";
@@ -26,7 +26,7 @@ const Test = () => {
   const [genres, setGenres] = useState([]);
 
   const [date, setDate] = useState([1960, 2010]);
-  const [duration, setDuration] = useState([60,170]);
+  const [duration, setDuration] = useState([60, 170]);
 
   const [metascore, setMetascore] = useState(70);
   const [imdbscore, setImdbScore] = useState(7);
@@ -52,9 +52,9 @@ const Test = () => {
   const [activeWarnings, setActiveWarnings] = useState(
     new Array(warnings.length).fill(false)
   );
-  const [passData,setPassData] = useState({});
-  const [submitted,setSubmitted] = useState(false);
-  const [missingRequired,setMissingRequired] = useState(false);
+  const [passData, setPassData] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  const [missingRequired, setMissingRequired] = useState(false);
 
   const genreFunc = (position) => {
     const updatedState = genreActive.map((item, index) => {
@@ -102,9 +102,9 @@ const Test = () => {
   const handleDateChange = (event, newValue) => {
     setDate(newValue);
   };
-  const handleDurationChange= (event,newValue)=>{
+  const handleDurationChange = (event, newValue) => {
     setDuration(newValue);
-  }
+  };
 
   const handleImdbChange = (event, newValue) => {
     setImdbScore(newValue);
@@ -126,13 +126,12 @@ const Test = () => {
     setLanguage(event.target.value);
   };
   const handleType = (type, value) => {
-    if(typeActive[value] === true){
-      setTypeActive(new Array(3).fill(false))
+    if (typeActive[value] === true) {
+      setTypeActive(new Array(3).fill(false));
       setType("");
-    }
-    else{
-    setType(type);
-    setTypeActive(value);
+    } else {
+      setType(type);
+      setTypeActive(value);
     }
     console.log(type);
   };
@@ -140,46 +139,43 @@ const Test = () => {
     const newActors = actors.filter((actor) => {
       if (actor !== actorToDelete) {
         return actor;
-      }
-      else return null;
+      } else return null;
     });
     setActors(newActors);
   };
 
-  const handleSave = ()=>{
-    const pop = popularity === ""
-    const cnt = country === ""
-    const lang = language === ""
-    const gnr = genres === []
+  const handleSave = () => {
+    const pop = popularity === "";
+    const cnt = country === "";
+    const lang = language === "";
+    const gnr = genres === [];
 
-    if(pop || cnt || lang || gnr){
+    if (pop || cnt || lang || gnr) {
       setMissingRequired(true);
-    }
-    else{
+    } else {
       setMissingRequired(false);
       setPassData({
-        genres:genres,
-        date:date,
-        duration:duration,
-        imdbscore:imdbscore,
-        metascore:metascore,
-        popularity:popularity,
-        country:country,
-        language:language,
-        type:type,
-        director:director,
-        actors:actors,
-        warningState:warningState,
-        featureState:featureState
-      })
+        genres: genres,
+        date: date,
+        duration: duration,
+        imdbscore: imdbscore,
+        metascore: metascore,
+        popularity: popularity,
+        country: country,
+        language: language,
+        type: type,
+        director: director,
+        actors: actors,
+        warningState: warningState,
+        featureState: featureState,
+      });
       setSubmitted(true);
     }
-  }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo(0, 0);
-  },[])
-  
+  }, []);
 
   //TO - DO
   // deal with checkboxes.
@@ -218,7 +214,14 @@ const Test = () => {
             onChange={handleDateChange}
             valueLabelDisplay="auto"
           />
-          <button className="dmbtn" onClick={()=>{setDate([1910,2023])}}>Doesn't Matter</button>
+          <button
+            className="dmbtn"
+            onClick={() => {
+              setDate([1910, 2023]);
+            }}
+          >
+            Doesn't Matter
+          </button>
         </TestContainer>
         <TestContainer>
           <Picker>Duration </Picker>
@@ -231,7 +234,14 @@ const Test = () => {
             onChange={handleDurationChange}
             valueLabelDisplay="auto"
           />
-          <button className="dmbtn" onClick={()=>{setDuration([20,300])}}>Doesn't Matter</button>
+          <button
+            className="dmbtn"
+            onClick={() => {
+              setDuration([20, 300]);
+            }}
+          >
+            Doesn't Matter
+          </button>
         </TestContainer>
         <DoubleTestContainer>
           <div>
@@ -244,7 +254,14 @@ const Test = () => {
               valueLabelDisplay="auto"
               onChange={handleImdbChange}
             />
-            <button className="dmbtn" onClick={()=>{setImdbScore(0)}}>Doesn't Matter</button>
+            <button
+              className="dmbtn"
+              onClick={() => {
+                setImdbScore(0);
+              }}
+            >
+              Doesn't Matter
+            </button>
           </div>
           <div>
             <Picker>METASCORE</Picker>
@@ -256,7 +273,14 @@ const Test = () => {
               valueLabelDisplay="auto"
               onChange={handleMetaChange}
             />
-            <button className="dmbtn" onClick={()=>{setMetascore(0)}}>Doesn't Matter</button>
+            <button
+              className="dmbtn"
+              onClick={() => {
+                setMetascore(0);
+              }}
+            >
+              Doesn't Matter
+            </button>
           </div>
         </DoubleTestContainer>
         <TestContainer>
@@ -264,7 +288,7 @@ const Test = () => {
           <h4>How popular should be the movie?</h4>
           <PopularityButtons>
             <button
-              className={popularityActive ===0 ? "active" : "none"}
+              className={popularityActive === 0 ? "active" : "none"}
               onClick={() => handlePopularity("Popular", 0)}
             >
               Popular
@@ -288,7 +312,6 @@ const Test = () => {
               Cult Classic
             </button>
           </PopularityButtons>
-          
         </TestContainer>
         <TestContainer>
           <Picker>COUNTRY</Picker>
@@ -313,7 +336,6 @@ const Test = () => {
               </Select>
             </FormControl>
           </Box>
-          
         </TestContainer>
         <TestContainer>
           <Picker>LANGUAGE</Picker>
@@ -338,7 +360,6 @@ const Test = () => {
               </Select>
             </FormControl>
           </Box>
-          
         </TestContainer>
         <TestContainer>
           <Picker>MOVIE TYPE</Picker>
@@ -363,7 +384,15 @@ const Test = () => {
               Musical
             </button>
           </TypeButtons>
-          <button className="dmbtn" onClick={()=>{setType(""); setTypeActive([false,false,false])}}>Doesn't Matter</button>
+          <button
+            className="dmbtn"
+            onClick={() => {
+              setType("");
+              setTypeActive([false, false, false]);
+            }}
+          >
+            Doesn't Matter
+          </button>
         </TestContainer>
         <DoubleTestContainer>
           <div>
@@ -387,7 +416,9 @@ const Test = () => {
                 />
               )}
             />
-            <button className="dmbtn" onClick={()=>setDirector("")}>Doesn't Matter</button>
+            <button className="dmbtn" onClick={() => setDirector("")}>
+              Doesn't Matter
+            </button>
           </div>
 
           <div>
@@ -422,14 +453,15 @@ const Test = () => {
                         <button onClick={() => DeleteActor(actor)}>X</button>
                       </div>
                     );
-                  }
-                  else{
+                  } else {
                     return null;
                   }
                 })}
               </div>
             </div>
-            <button className="dmbtn" onClick={()=>setActors([])}>Doesn't Matter</button>
+            <button className="dmbtn" onClick={() => setActors([])}>
+              Doesn't Matter
+            </button>
           </div>
         </DoubleTestContainer>
         <TestContainer>
@@ -450,7 +482,15 @@ const Test = () => {
               );
             })}
           </WarningButtons>
-          <button className="dmbtn" onClick={()=>setWarningState([])}>Doesn't Matter</button>
+          <button
+            className="dmbtn"
+            onClick={() => {
+              setWarningState([]);
+              setActiveWarnings(new Array(warnings.length).fill(false))
+            }}
+          >
+            Doesn't Matter
+          </button>
         </TestContainer>
         <TestContainer>
           <Picker>FEATURES</Picker>
@@ -470,15 +510,34 @@ const Test = () => {
               );
             })}
           </FeatureButtons>
-          <button className="dmbtn" onClick={()=>setFeatureState([])}>Doesn't Matter</button>
+          <button
+            className="dmbtn"
+            onClick={() => {
+              setFeatureState([]);
+              setActiveFeatures(new Array(features.length).fill(false));
+            }}
+          >
+            Doesn't Matter
+          </button>
         </TestContainer>
-        <button className="submitbtn"
-          onClick={handleSave}
-        >
+        <button className="submitbtn" onClick={handleSave}>
           SAVE PREFERENCES
         </button>
-        <p className="missing">{missingRequired ? "Genre, Popularity, Country and Language Fields are mandatory." : null}</p>
-        <Link style={submitted ? null :{pointerEvents:"none", backgroundColor:"gray"}} state={passData} to="/results" className="submitbtn">
+        <p className="missing">
+          {missingRequired
+            ? "Genre, Popularity, Country and Language Fields are mandatory."
+            : null}
+        </p>
+        <Link
+          style={
+            submitted
+              ? null
+              : { pointerEvents: "none", backgroundColor: "gray" }
+          }
+          state={passData}
+          to="/results"
+          className="submitbtn"
+        >
           Find Me Movies
         </Link>
       </Wrapper>
@@ -495,7 +554,7 @@ const Wrapper = styled.div`
     text-align: center;
     color: white;
   }
-  
+
   .submitbtn {
     padding: 4px 52px;
     border-radius: 10px;
@@ -503,24 +562,23 @@ const Wrapper = styled.div`
     color: white;
     margin-left: 20%;
     font-size: 24px;
-    cursor:pointer;
-    margin-bottom:1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
   }
-  .missing{
-    margin-left:20%;
-    color:white;
+  .missing {
+    margin-left: 20%;
+    color: white;
   }
-  .dmbtn{
-    padding:3px 30px;
-    font-size:16px;
-    margin-top:1rem;
-    border:none !important;
+  .dmbtn {
+    padding: 3px 30px;
+    font-size: 16px;
+    margin-top: 1rem;
+    border: none !important;
     border-radius: 0 !important;
-    
   }
-  .dmbtn:hover{
+  .dmbtn:hover {
     background-color: #b70304;
-    color:White;
+    color: White;
   }
 `;
 
@@ -561,7 +619,7 @@ const TestContainer = styled.div`
   .menuitem {
     padding: 8px;
     background: rgba(255, 255, 255, 0.88);
-    margin-bottom:2.5rem;
+    margin-bottom: 2.5rem;
   }
   button:hover {
     border: 1px solid red;
@@ -609,7 +667,7 @@ const FeatureButtons = styled.div`
   row-gap: 0.5rem;
   column-gap: 0.5rem;
   @media (max-width: 992px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
@@ -633,14 +691,14 @@ const DoubleTestContainer = styled.div`
 
   .actors-box {
     display: grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.88);
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
   }
   .actors-child {
-    width:100%;
+    width: 100%;
     padding: 0;
     margin: 0;
   }
@@ -706,8 +764,7 @@ const PopularityButtons = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-top: 2.5rem;
-  margin-bottom:2.5rem;
-
+  margin-bottom: 2.5rem;
 `;
 
 export default Test;

@@ -14,5 +14,14 @@ export const links = [
       url: "/Movietest",
       text: "Take The Test",
     },
-    
+    {
+      id:4,
+      url: "/",
+      text:"Blog",
+    },
+    {
+      id:5,
+      url: "/",
+      text:"Weekly Quiz",
+    }
   ];

@@ -87,7 +87,12 @@ exports.getMovies = async (req,res)=>{
         else{
             movie.noMatch.push("director")
         }
-
+        if(movie.movie_type === type){
+            movie.points += 5;
+        }
+        else{
+            movie.noMatch.push("type");
+        }
         
     })
     data.forEach((item,index)=>{ // FIX
