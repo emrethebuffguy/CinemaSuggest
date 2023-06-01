@@ -16,12 +16,12 @@ export const links = [
     },
     {
       id:4,
-      url: "/",
+      url: "/blog",
       text:"Blog",
     },
     {
       id:5,
-      url: "/",
+      url: "/quiz",
       text:"Weekly Quiz",
     }
   ];

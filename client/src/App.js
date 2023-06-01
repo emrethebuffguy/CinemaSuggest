@@ -4,8 +4,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home";
 import Test from "./pages/Test";
 import Results from "./pages/Results";
-
-
+import Admin from "./pages/Admin";
+import BlogPage from "./pages/BlogPage";
+import WeeklyQuiz from "./pages/WeeklyQuiz";
+import BlogArticle from "./pages/BlogArticle";
 
 function App() {
   return <>
@@ -14,6 +16,11 @@ function App() {
     <Route path="/" element={<Home/>} />
     <Route path="/movietest" element={<Test/>} />
     <Route path="/results" element={<Results/>} />
+    <Route path="/admin" element={<Admin/>} />
+    <Route path="/blog" element={<BlogPage/>}/>
+    <Route path="/quiz" element={<WeeklyQuiz/>}/>
+    <Route path="/blog/:id" element={<BlogArticle/>}/>
+    
     </Routes>
   </Router>
   </>;

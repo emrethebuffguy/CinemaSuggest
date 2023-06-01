@@ -430,14 +430,14 @@ const Test = () => {
                   onChange={(event, newValue) => {
                     setActors([...actors, newValue]);
                   }}
-                  className="autocomplete"
-                  fullWidth
+                  className="actorcomplete"
+                  
                   id="autocomplete"
                   options={actorData}
                   renderInput={(params) => (
                     <TextField
-                      fullWidth
-                      style={{ width: "400px" }}
+                      
+                      style={{ width: "300px" }}
                       {...params}
                       label="Actor/Actress"
                     />
@@ -625,7 +625,8 @@ const TestContainer = styled.div`
     border: 1px solid red;
   }
   .active {
-    border: 2px solid red;
+    background-color:  #ed8554;
+    color: white;
   }
   .line-through {
     text-decoration: line-through;
@@ -698,16 +699,24 @@ const DoubleTestContainer = styled.div`
     margin: 0;
   }
   .actors-child {
-    width: 100%;
+    
     padding: 0;
     margin: 0;
+    width:100%;
   }
 
   .autocomplete {
     background-color: rgba(255, 255, 255, 0.88);
     margin: 0;
     padding: 0;
-    width: 100%;
+    width:100%;
+  }
+
+  .actorcomplete{
+    margin:0;
+    padding:0;
+    background-color: rgba(255, 255, 255, 0.88);
+    width:100%;
   }
 
   div {
@@ -727,7 +736,7 @@ const DoubleTestContainer = styled.div`
     display: inline;
   }
   .individual {
-    width: 80%;
+    min-width:100px;
     border-radius: 12px;
     padding: 2px;
     background-color: gray;
@@ -735,6 +744,8 @@ const DoubleTestContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 5px;
+    
+    z-index:2;
   }
   .individual p {
     margin: auto;
@@ -757,6 +768,10 @@ const DoubleTestContainer = styled.div`
     .actors-box {
       flex-direction: column;
     }
+    .actorcomplete{
+      width:100%;
+    }
+    
   }
 `;
 

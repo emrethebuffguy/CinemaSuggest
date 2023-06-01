@@ -29,7 +29,7 @@ const Heroslider = () => {
     <HeroContainer>
         <div className="slider">
         {slideList.map((slide,index)=>{
-          return(<img className={index === current ? 'slide active' : 'slide'} src={slide} alt="" />)
+          return(<img key={index} className={index === current ? 'slide active' : 'slide'} src={slide} alt="" />)
         })}
 
         </div>
