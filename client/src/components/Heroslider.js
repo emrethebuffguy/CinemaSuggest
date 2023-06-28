@@ -6,11 +6,13 @@ import { Link } from "react-router-dom";
 import imgTwo from "../assets/slider3.png"
 import imgThree from "../assets/slider4.png"
 import imgFour from "../assets/slider5.png"
+import imgFive from "../assets/cinema.jpg"
+import imgSix from "../assets/movie.jpg"
 const slideDelay = 5000;
 
 const Heroslider = () => {
   const [current,setCurrent] = useState(0);
-  const slideList = [imgUrl,imgTwo,imgThree,imgFour];
+  const slideList = [imgUrl,imgFive,imgSix,imgTwo,imgThree,imgFour];
 
 
   useEffect(()=>{
