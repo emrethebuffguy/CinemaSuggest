@@ -130,7 +130,7 @@ const HeroContainer = styled.div`
     p{
       top:40%;
     }
-    button{
+    .submitbtn{
       top:60%;
     }
   }

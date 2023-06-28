@@ -34,7 +34,7 @@ h4{
 @media (max-width:992px){
     width:95%;
     height: auto;
-    
+    margin:4rem auto;
     h4{
         font-size:12px;
         line-height: 16px;
