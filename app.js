@@ -40,7 +40,7 @@ app.set("forceSSLOptions", {
 
 app.use(
   cors({
-    origin: "https://cinemasuggest.herokuapp.com",
+    origin: "https://cinemasuggest.com",
     optionsSuccessStatus: 200,
   })
 );
