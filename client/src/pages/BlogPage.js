@@ -15,6 +15,7 @@ import movie6 from "../assets/blogpics/movie6.jpg"
 import movie7 from "../assets/blogpics/movie7.jpg"
 
 const localBlogUrl = "http://localhost:5000/api/v1/blog";
+const prodUrl = "https://cinemasuggest.com/api/v1/blog"
 const pics = [movie1,movie2,movie3,movie4,movie5,movie6,movie7]
 
 const BlogPage = () => {
@@ -22,7 +23,7 @@ const BlogPage = () => {
 
   useEffect(() => {
     const handlePosts = async () => {
-      const response = await fetch(`${localBlogUrl}/published`, {
+      const response = await fetch(`${prodUrl}/published`, {
         method: "GET",
         json: true,
       });

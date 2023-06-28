@@ -6,7 +6,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
+
 const localBlogUrl = "http://localhost:5000/api/v1/blog";
+const prodUrl = "https://cinemasuggest.com/api/v1/blog"
 
 const BlogArticle = (props) => {
   let { id } = useParams();
@@ -16,7 +18,7 @@ const BlogArticle = (props) => {
   useEffect(() => {
     setLoading(true);
     const handlePosts = async () => {
-      const response = await fetch(`${localBlogUrl}/published`, {
+      const response = await fetch(`${prodUrl}/published`, {
         method: "GET",
         json: true,
       });

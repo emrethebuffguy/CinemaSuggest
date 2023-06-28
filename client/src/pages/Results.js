@@ -13,6 +13,8 @@ const devUrl = "https://cinemasuggest.herokuapp.com/api/v1/movies/?";
 
 const localUrl = "http://localhost:5000/api/v1/movies/?";
 
+const prodUrl = "https://cinemasuggest.com/api/v1/movies/?"
+
 const handlePassingData = (passData) => {
   const genres = passData.state.genres.join(",");
   const warningState = passData.state.warningState.join(",");
@@ -41,7 +43,7 @@ const Results = (props) => {
         setLoading(true);
         const data = handlePassingData(passData);
         const response = await fetch(
-          `${devUrl}durationFilter=${data.duration.join(
+          `${prodUrl}durationFilter=${data.duration.join(
             ","
           )}&date=${data.date.join(",")}&genres=${data.genres}&imdbRate=${
             data.imdbscore
