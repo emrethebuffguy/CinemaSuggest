@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="info">
         <div className="content">
           <h3>Contact Us!</h3>
-          <h3>Email: blabla@gmail.com</h3>
+          <h3>Email: cinemasuggestinfo@gmail.com</h3>
         </div>
         <div className="social">
            <a href="#"> <AiFillFacebook className="social-icon"/></a>
@@ -18,9 +18,10 @@ const Footer = () => {
         </div>
         <div className="sitemap">
             <h3>Sitemap</h3>
-            <a href="#">Home</a>
-            <a href="#">The Movie Test</a>
-            <a href="#">About</a>
+            <a href="/">Home</a>
+            <a href="/movietest">The Movie Test</a>
+            <a href="/blog">Blog</a>
+            <a href="/quiz">Weekly Quiz</a>
         </div>
       </div>
       <h4>&copy; 2023 CinemaSuggest. All rights Reserved.</h4>

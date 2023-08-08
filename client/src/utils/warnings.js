@@ -4,5 +4,4 @@ export const warnings = [
   "Profanity",
   "Sex & Nudity",
   "Violence & Gore",
-  "moving",
 ];

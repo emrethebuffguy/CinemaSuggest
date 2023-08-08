@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import logo from "../logo.svg"
+import logo from "../assets/icon.png"
 import { FaBars } from "react-icons/fa";
 import "../index.css"
 import { links } from "../utils/constants";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [showLinks, setShowLinks] = useState(false);
   const linksContainerRef = useRef(null);
   const linksRef = useRef(null);
@@ -20,11 +22,17 @@ const Navbar = () => {
       linksContainerRef.current.style.height = '0px';
     }
   }, [showLinks]);
+
+  const handleClick= ()=>{
+    
+    navigate("/");
+  }
+
   return (
     <NavigationElement>
       <div className='nav-center'>
         <div className='nav-header'>
-          <img src={logo}  className='logo' alt='logo' />
+          <img src={logo}  className='logo' alt='logo' onClick={handleClick}/>
           <button className='nav-toggle' onClick={toggleLinks}>
             <FaBars />
           </button>
@@ -71,8 +79,9 @@ const NavigationElement = styled.nav`
   color: red;
   transform: rotate(90deg);
 }
-.logo {
-  height: 40px;
+img{
+  height:55px;
+  cursor:pointer;
 }
 .links a {
   color: white;

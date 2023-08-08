@@ -336,6 +336,14 @@ const Test = () => {
               </Select>
             </FormControl>
           </Box>
+          <button
+            className="dmbtn"
+            onClick={() => {
+              setCountry("");
+            }}
+          >
+            Doesn't Matter
+          </button>
         </TestContainer>
         <TestContainer>
           <Picker>LANGUAGE</Picker>
