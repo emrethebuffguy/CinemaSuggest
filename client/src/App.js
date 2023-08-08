@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Route, Routes } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home";
@@ -10,6 +10,9 @@ import WeeklyQuiz from "./pages/WeeklyQuiz";
 import BlogArticle from "./pages/BlogArticle";
 
 function App() {
+  useEffect(() => {
+    document.title = 'Cinemasuggest - Find movies you like within munites!';
+  }, []);
   return <>
   <Router>
     <Routes>

@@ -146,11 +146,11 @@ const Test = () => {
 
   const handleSave = () => {
     const pop = popularity === "";
-    const cnt = country === "";
+    
     const lang = language === "";
     const gnr = genres === [];
 
-    if (pop || cnt || lang || gnr) {
+    if (pop  || lang || gnr) {
       setMissingRequired(true);
     } else {
       setMissingRequired(false);
@@ -533,7 +533,7 @@ const Test = () => {
         </button>
         <p className="missing">
           {missingRequired
-            ? "Genre, Popularity, Country and Language Fields are mandatory."
+            ? "Genre, Popularity and Language Fields are mandatory."
             : null}
         </p>
         <Link

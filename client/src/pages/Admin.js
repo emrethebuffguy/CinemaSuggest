@@ -3,7 +3,8 @@ import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Dashboard from "../components/Dashboard";
 
-const devUrl = "https://cinemasuggest.herokuapp.com/api/v1/admin/login";
+const devUrl = "https://cinemasuggest.com/api/v1/admin/login";
+const devBlogUrl = "https://cinemasuggest.com/api/v1/blog";
 
 const localUrl = "http://localhost:5000/api/v1/admin/login";
 const localBlogUrl = "http://localhost:5000/api/v1/blog";
@@ -20,7 +21,7 @@ const Admin = () => {
     console.log(email);
     console.log(password);
 
-    const response = await fetch(localUrl, {
+    const response = await fetch(devUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +43,7 @@ const Admin = () => {
     } else {
       const handlePosts = async () => {
         console.log(user);
-        const blogresponse = await fetch(localBlogUrl, {
+        const blogresponse = await fetch(devBlogUrl, {
           method: "GET",
           json: true,
           headers: {
