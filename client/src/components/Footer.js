@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="info">
         <div className="content">
           <h3>Contact Us!</h3>
-          <h3>Email: cinemasuggestinfo@gmail.com</h3>
+          <h3 className="normal-text">Email: cinemasuggestinfo@gmail.com</h3>
         </div>
         <div className="social">
            <a href="#"> <AiFillFacebook className="social-icon"/></a>
@@ -35,6 +35,9 @@ const FooterContainer = styled.footer`
   display:flex;
   flex-direction: column;
   margin-bottom:0;
+  .normal-text{
+    text-transform: none !important;
+  }
   .info{
     margin-top:1rem;
     display:flex;
