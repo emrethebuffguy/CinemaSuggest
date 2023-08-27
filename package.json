@@ -1,9 +1,6 @@
 {
   "name": "movie-app",
   "version": "1.0.0",
-  "engines": {
-    "node": "14.17.3"
-  },
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "concurrently": "^7.6.0",
