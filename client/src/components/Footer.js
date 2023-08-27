@@ -34,6 +34,7 @@ const FooterContainer = styled.footer`
     
   display:flex;
   flex-direction: column;
+  margin-bottom:0;
   .info{
     margin-top:1rem;
     display:flex;

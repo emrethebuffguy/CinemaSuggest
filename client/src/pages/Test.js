@@ -431,7 +431,7 @@ const Test = () => {
 
           <div>
             <Picker>STARS</Picker>
-            <h4>Who are your favorite actresses and actors?</h4>
+            <h4>Favorite actresses and actors?</h4>
             <div className="actors-box">
               <div className="actors-child">
                 <Autocomplete
@@ -667,12 +667,17 @@ const WarningButtons = styled.div`
   row-gap: 0.5rem;
   column-gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
+
+  button:nth-child(5){
+    width:100%;
+    justify-self: end;
+  }
 `;
 
 const FeatureButtons = styled.div`
   margin: 2.5rem auto;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   row-gap: 0.5rem;
   column-gap: 0.5rem;
   @media (max-width: 992px) {

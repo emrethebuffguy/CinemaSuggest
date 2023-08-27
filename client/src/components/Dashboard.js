@@ -8,6 +8,9 @@ import Dialog from "@mui/material/Dialog";
 const localUrl = "http://localhost:5000/api/v1/admin/login";
 const localBlogUrl = "http://localhost:5000/api/v1/blog";
 
+const prodUrl = "https://cinemasuggest.com/api/v1/admin/login"
+const prodBlogUrl = "https://cinemasuggest.com/api/v1/blog"
+
 const Dashboard = ({ blogPosts, setBlogPosts, user }) => {
   const [firstRender, setFirstRender] = useState(false);
   const [postChanged, setPostChanged] = useState(0);
@@ -32,7 +35,7 @@ const Dashboard = ({ blogPosts, setBlogPosts, user }) => {
       setFirstRender(true);
     } else {
       const handlePosts = async () => {
-        const blogresponse = await fetch(localBlogUrl, {
+        const blogresponse = await fetch(prodBlogUrl, {
           method: "GET",
           json: true,
           headers: {
@@ -49,7 +52,7 @@ const Dashboard = ({ blogPosts, setBlogPosts, user }) => {
 
   const handleDelete = async (id) => {
     const handlePosts = async () => {
-      const blogresponse = await fetch(`${localBlogUrl}/${id}`, {
+      const blogresponse = await fetch(`${prodBlogUrl}/${id}`, {
         method: "DELETE",
         json: true,
         headers: {
@@ -99,7 +102,7 @@ const Dashboard = ({ blogPosts, setBlogPosts, user }) => {
       setError(false);
 
       try {
-        const request = await fetch(localBlogUrl, {
+        const request = await fetch(prodBlogUrl, {
           method:"POST",
           json: true,
           headers: {
@@ -133,7 +136,7 @@ const Dashboard = ({ blogPosts, setBlogPosts, user }) => {
       setError(false);
 
       try {
-        const request = await fetch(`${localBlogUrl}/${editId}`, {
+        const request = await fetch(`${prodBlogUrl}/${editId}`, {
           method:"PATCH",
           json: true,
           headers: {

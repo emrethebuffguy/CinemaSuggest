@@ -8,6 +8,7 @@ import Admin from "./pages/Admin";
 import BlogPage from "./pages/BlogPage";
 import WeeklyQuiz from "./pages/WeeklyQuiz";
 import BlogArticle from "./pages/BlogArticle";
+import QuizResults from "./pages/QuizResults";
 
 function App() {
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
     <Route path="/admin" element={<Admin/>} />
     <Route path="/blog" element={<BlogPage/>}/>
     <Route path="/quiz" element={<WeeklyQuiz/>}/>
+    <Route path="/quizresults" element={<QuizResults/>}/>
     <Route path="/blog/:id" element={<BlogArticle/>}/>
     
     </Routes>
