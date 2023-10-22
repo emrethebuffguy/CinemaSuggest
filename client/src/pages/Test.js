@@ -146,11 +146,11 @@ const Test = () => {
 
   const handleSave = () => {
     const pop = popularity === "";
-    
-    const lang = language === "";
-    const gnr = genres === [];
 
-    if (pop  || lang || gnr) {
+    const lang = language === "";
+    const gnr = genres == [];
+
+    if (pop || lang || gnr) {
       setMissingRequired(true);
     } else {
       setMissingRequired(false);
@@ -439,15 +439,13 @@ const Test = () => {
                     setActors([...actors, newValue]);
                   }}
                   className="actorcomplete"
-                  
                   id="autocomplete"
                   options={actorData}
                   renderInput={(params) => (
                     <TextField
-                      
-                      style={{ width: "300px" }}
+                      style={{ width: "80%" }}
                       {...params}
-                      label="Actor/Actress"
+                      label="Actor"
                     />
                   )}
                 />
@@ -494,7 +492,7 @@ const Test = () => {
             className="dmbtn"
             onClick={() => {
               setWarningState([]);
-              setActiveWarnings(new Array(warnings.length).fill(false))
+              setActiveWarnings(new Array(warnings.length).fill(false));
             }}
           >
             Doesn't Matter
@@ -633,7 +631,7 @@ const TestContainer = styled.div`
     border: 1px solid red;
   }
   .active {
-    background-color:  #ed8554;
+    background-color: #ed8554;
     color: white;
   }
   .line-through {
@@ -668,8 +666,8 @@ const WarningButtons = styled.div`
   column-gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
 
-  button:nth-child(5){
-    width:100%;
+  button:nth-child(5) {
+    width: 100%;
     justify-self: end;
   }
 `;
@@ -712,24 +710,23 @@ const DoubleTestContainer = styled.div`
     margin: 0;
   }
   .actors-child {
-    
     padding: 0;
     margin: 0;
-    width:100%;
+    width: 100%;
   }
 
   .autocomplete {
     background-color: rgba(255, 255, 255, 0.88);
     margin: 0;
     padding: 0;
-    width:100%;
+    width: 100%;
   }
 
-  .actorcomplete{
-    margin:0;
-    padding:0;
+  .actorcomplete {
+    margin: 0;
+    padding: 0;
     background-color: rgba(255, 255, 255, 0.88);
-    width:100%;
+    width: 100%;
   }
 
   div {
@@ -749,7 +746,7 @@ const DoubleTestContainer = styled.div`
     display: inline;
   }
   .individual {
-    min-width:100px;
+    width:80%;
     border-radius: 12px;
     padding: 2px;
     background-color: gray;
@@ -757,8 +754,8 @@ const DoubleTestContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 5px;
-    
-    z-index:2;
+
+    z-index: 2;
   }
   .individual p {
     margin: auto;
@@ -781,10 +778,9 @@ const DoubleTestContainer = styled.div`
     .actors-box {
       flex-direction: column;
     }
-    .actorcomplete{
-      width:100%;
+    .actorcomplete {
+      width: 100%;
     }
-    
   }
 `;
 

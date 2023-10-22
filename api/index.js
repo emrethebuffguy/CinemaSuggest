@@ -5,10 +5,10 @@ const cors = require("cors");
 const rateLimit = require("express-rate-limit");
 const compression = require("compression");
 const forceSSL = require("express-force-ssl");
-const movieRouter = require("./routes/movieroutes");
-const blogRouter = require("./routes/blogroutes");
-const adminRouter = require("./routes/adminroutes");
-const quizRouter = require("./routes/quizroutes");
+const movieRouter = require("../routes/movieroutes");
+const blogRouter = require("../routes/blogroutes");
+const adminRouter = require("../routes/adminroutes");
+const quizRouter = require("../routes/quizroutes");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 
