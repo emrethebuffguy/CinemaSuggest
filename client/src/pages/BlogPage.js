@@ -53,7 +53,7 @@ const BlogPage = () => {
                   <img src={pics[index]} alt="blog showing " />
                   <div className="blog-info">
                     <h3>{item.title}</h3>
-                    <p>{item.paragraphs[0].slice(0, 120)}...</p>
+                    <p>{item.paragraphs[1].slice(0, 120)}...</p>
                     <Link
                       to={`/blog/${index}`}
                       state={item}
