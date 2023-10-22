@@ -1,6 +1,5 @@
 {
   "name": "movie-app",
-  
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,18 +7,6 @@
     "start:dev": "nodemon server.js"
   },
   "version": "1.0.0",
-  "builds": [
-    {
-      "src": "./server.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "destination": "/"
-    }
-  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
