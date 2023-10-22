@@ -117,7 +117,7 @@ const BlogPageContainer = styled.div`
   }
   .blog-article img {
     height: 100%;
-    width: 45%;
+    width: 38%;
   }
   .blog-info {
     padding: 8px;
