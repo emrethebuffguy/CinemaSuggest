@@ -71,7 +71,6 @@ const BlogPage = () => {
 };
 
 const BlogPageContainer = styled.div`
-  
   .blog-img-container {
     width: 70%;
     position: relative;
@@ -109,10 +108,11 @@ const BlogPageContainer = styled.div`
     height: 40vh;
     padding: 0;
     display: flex;
+    justify-content: flex-start;
   }
   .blog-article img {
     height: 100%;
-    width: 38%;
+    margin-left: -6%;
   }
   .blog-info {
     padding: 8px;
