@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import computer from "../assets/computer.png";
+import computer from "../assets/CinemaSuggest.png";
 import { Link } from "react-router-dom";
 const BottomComp = () => {
   return (

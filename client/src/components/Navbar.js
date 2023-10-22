@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import logo from "../assets/icon.png"
+import logo from "../assets/Logo.png"
 import { FaBars } from "react-icons/fa";
 import "../index.css"
 import { links } from "../utils/constants";
@@ -66,6 +66,10 @@ const NavigationElement = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
+}
+.logo{
+  width:150px;
+  height:auto;
 }
 .nav-toggle {
   font-size: 1.5rem;
