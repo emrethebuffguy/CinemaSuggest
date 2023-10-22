@@ -23,9 +23,9 @@ const BottomComp = () => {
 
 const BottomCompContainer = styled.div`
   width: 80%;
-  height: 80%;
+  height: 50%;
   margin: 2rem auto;
-  margin-top: 15rem;
+  margin-top: 10rem;
 
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@ const BottomCompContainer = styled.div`
   }
 
   @media (max-width:992px){
-    margin-top:15rem;
+    margin-top:7rem;
     .computer-section{
         flex-direction: column;
     }

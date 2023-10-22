@@ -575,12 +575,12 @@ const Wrapper = styled.div`
   }
   @media (max-width: 992px) {
     .submitbtn {
-      width: 60%;
+      width: 100%;
     }
   }
 
   .submitbtns{
-    width:40%;
+    width:70%;
     margin:1rem auto;
     display:flex;
     flex-direction: column;

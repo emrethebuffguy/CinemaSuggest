@@ -139,6 +139,9 @@ const BlogPageContainer = styled.div`
   }
 
   @media (max-width: 992px) {
+    .blog-img-container h2{
+      font-size:1.5rem;
+    }
     .blog-img-container {
       width: 90%;
     }
@@ -147,6 +150,9 @@ const BlogPageContainer = styled.div`
       width: 95%;
       grid-template-columns: 1fr;
       margin-top: 350px;
+    }
+    .blog-article{
+      flex-direction:column;
     }
   }
 `;

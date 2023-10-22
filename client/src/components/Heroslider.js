@@ -57,12 +57,16 @@ const Heroslider = () => {
 const HeroContainer = styled.div`
   background: black;
   min-width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   z-index: 1;
   position: relative;
   margin: 0 auto;
 
    margin-top: -3rem; 
+   @media (max-width:992px){
+    /* min-height: 100%; */
+    height:400px !important;
+   }
   .slider {
     height: 720px;
     position: relative;
@@ -106,14 +110,7 @@ const HeroContainer = styled.div`
     color: white;
     padding:6px;
   }
-  @media (max-width:992px){
-    .slider h1{
-      font-size:24px;
-      line-height: 30px;
-      top:15%;
-      
-    }
-  }
+ 
   p {
     position: absolute;
     top: 30%;
@@ -142,23 +139,23 @@ const HeroContainer = styled.div`
     height: 600px;
     .slider {
       max-width: 95vw;
-      height: 600px;
-      margin: 10rem auto;
+      height: 300px;
+      margin: 2rem auto;
       margin-bottom: 0;
     }
     .slide {
       height: auto;
     }
     h1 {
-      font-size: 40px;
-      line-height: 48px;
+      font-size: 20px;
+      line-height: 24px;
       top: 10%;
     }
     p {
-      top: 40%;
+      top: 35%;
     }
     .submitbtn {
-      top: 60%;
+      top: 70%;
     }
   }
 `;
