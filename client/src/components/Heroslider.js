@@ -81,6 +81,7 @@ const HeroContainer = styled.div`
   @media (max-width:992px){
     .slider{
       height: 400px;
+      width:100%;
     }
   }
   img {
@@ -150,12 +151,15 @@ const HeroContainer = styled.div`
       font-size: 20px;
       line-height: 24px;
       top: 10%;
+      left:2%;
     }
     p {
       top: 35%;
+      left:2%;
     }
     .submitbtn {
       top: 70%;
+      left:2%;
     }
   }
 `;

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8657339d.css",
-    "main.js": "/static/js/main.dc24e921.js",
+    "main.js": "/static/js/main.aede237f.js",
     "static/media/design_3.png": "/static/media/design_3.369dc23d1581b8bbe307.png",
     "static/media/design_6.png": "/static/media/design_6.1cf0abe2ce71dfc48fc0.png",
     "static/media/design_2.png": "/static/media/design_2.41b2e37bbb47a08ef3e0.png",
@@ -15,13 +15,13 @@
     "static/media/memento_poster.png": "/static/media/memento_poster.5dd20e187135f9b5ef92.png",
     "static/media/CinemaSuggest.png": "/static/media/CinemaSuggest.b0b8f6f83e5cf45d6c05.png",
     "static/media/blogimg.png": "/static/media/blogimg.955b51cd75137734f2be.png",
-    "static/media/Logo.png": "/static/media/Logo.c039fe78fe8b3dec2d8c.png",
+    "static/media/Logo.png": "/static/media/Logo.4076849a6dc2172a4019.png",
     "index.html": "/index.html",
     "main.8657339d.css.map": "/static/css/main.8657339d.css.map",
-    "main.dc24e921.js.map": "/static/js/main.dc24e921.js.map"
+    "main.aede237f.js.map": "/static/js/main.aede237f.js.map"
   },
   "entrypoints": [
     "static/css/main.8657339d.css",
-    "static/js/main.dc24e921.js"
+    "static/js/main.aede237f.js"
   ]
 }

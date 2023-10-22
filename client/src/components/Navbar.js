@@ -66,9 +66,10 @@ const NavigationElement = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
+  padding-left:0 !important;
 }
 .logo{
-  width:150px;
+  width:330px;
   height:auto;
 }
 .nav-toggle {
