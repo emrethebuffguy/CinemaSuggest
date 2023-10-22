@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/static/css/main.8657339d.css",
-    "main.js": "/static/js/main.59dce28f.js",
+    "main.js": "/static/js/main.1d2d0d84.js",
     "static/media/design_3.png": "/static/media/design_3.369dc23d1581b8bbe307.png",
     "static/media/design_6.png": "/static/media/design_6.1cf0abe2ce71dfc48fc0.png",
     "static/media/design_2.png": "/static/media/design_2.41b2e37bbb47a08ef3e0.png",
+    "static/media/explanation_design.png": "/static/media/explanation_design.e7a997e9f46f3d04a95c.png",
     "static/media/design_1.png": "/static/media/design_1.cbf65ba14f96a65fdb3f.png",
     "static/media/design_5.png": "/static/media/design_5.d3b10d06ef46c6a78312.png",
-    "static/media/computer.png": "/static/media/computer.9dc1b521a06503fb29f4.png",
     "static/media/design_4.png": "/static/media/design_4.0c7d0713cd94f387f636.png",
     "static/media/blogimgfront.png": "/static/media/blogimgfront.c9383657f6ff32ccd152.png",
     "static/media/se7en_poster.png": "/static/media/se7en_poster.bbec9b12a7c21afea4e1.png",
     "static/media/the_fountain.png": "/static/media/the_fountain.3f370678183c288b6bf9.png",
     "static/media/memento_poster.png": "/static/media/memento_poster.5dd20e187135f9b5ef92.png",
-    "static/media/joker.png": "/static/media/joker.39a4e4db7132208fcd7f.png",
+    "static/media/CinemaSuggest.png": "/static/media/CinemaSuggest.b0b8f6f83e5cf45d6c05.png",
     "static/media/blogimg.png": "/static/media/blogimg.955b51cd75137734f2be.png",
-    "static/media/icon.png": "/static/media/icon.75ffb8524264c706c966.png",
+    "static/media/Logo.png": "/static/media/Logo.c039fe78fe8b3dec2d8c.png",
     "index.html": "/index.html",
     "main.8657339d.css.map": "/static/css/main.8657339d.css.map",
-    "main.59dce28f.js.map": "/static/js/main.59dce28f.js.map"
+    "main.1d2d0d84.js.map": "/static/js/main.1d2d0d84.js.map"
   },
   "entrypoints": [
     "static/css/main.8657339d.css",
-    "static/js/main.59dce28f.js"
+    "static/js/main.1d2d0d84.js"
   ]
 }
