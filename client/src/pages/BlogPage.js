@@ -42,7 +42,7 @@ const BlogPage = () => {
         <div className="blog-img-container">
           <img src={blogImg} alt="our blog image" />
           <img src={blogImgFront} alt="blog image front" />
-          <h2 className="white">Welcome To The CinemaSuggest Blog</h2>
+          <h2>Welcome To The CinemaSuggest Blog</h2>
         </div>
 
         <div className="blog-articles">
@@ -94,7 +94,7 @@ const BlogPageContainer = styled.div`
     position: absolute;
     left: 10px;
     top: 10px;
-    font-size: 5rem;
+    font-size: 3rem;
     color: white;
   }
 
