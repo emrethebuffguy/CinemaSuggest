@@ -11,7 +11,7 @@ import movie3 from "../assets/blogpics/the_fountain.png";
 
 const localBlogUrl = "http://localhost:3000/api/v1/blog";
 const prodUrl = "https://cinemasuggest.com/api/v1/blog";
-const pics = [movie1, movie2, movie3];
+const pics = [movie2, movie1, movie3];
 
 const BlogPage = () => {
   const [blogContent, setBlogContent] = useState([]);
