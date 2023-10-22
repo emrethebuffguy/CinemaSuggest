@@ -153,6 +153,7 @@ const BlogPageContainer = styled.div`
     }
     .blog-article{
       flex-direction:column;
+      height:auto;
     }
   }
 `;
