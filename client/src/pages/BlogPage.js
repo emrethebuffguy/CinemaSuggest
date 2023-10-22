@@ -76,10 +76,7 @@ const BlogPage = () => {
 };
 
 const BlogPageContainer = styled.div`
-  .white {
-    font-size: 5rem;
-    color: white;
-  }
+  
   .blog-img-container {
     width: 70%;
     position: relative;
@@ -97,7 +94,8 @@ const BlogPageContainer = styled.div`
     position: absolute;
     left: 10px;
     top: 10px;
-    font-size: 24px;
+    font-size: 5rem;
+    color: white;
   }
 
   .blog-articles {
@@ -140,6 +138,7 @@ const BlogPageContainer = styled.div`
     padding: 5px;
     cursor: pointer;
   }
+
   .button-article:hover {
     background-color: #ed8554;
   }
