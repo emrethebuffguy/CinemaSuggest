@@ -1,142 +1,166 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import imgUrl from '../assets/spiderman.jpg';
 import { Link } from "react-router-dom";
 
-import imgTwo from "../assets/slider3.png"
-import imgThree from "../assets/slider4.png"
-import imgFour from "../assets/slider5.png"
-import imgFive from "../assets/cinema.jpg"
-import imgSix from "../assets/movie.jpg"
+import imgUrl from "../assets/design_1.png";
+import imgTwo from "../assets/design_2.png";
+import imgThree from "../assets/design_3.png";
+import imgFour from "../assets/design_4.png";
+import imgFive from "../assets/design_5.png";
+import imgSix from "../assets/design_6.png";
 const slideDelay = 5000;
 
 const Heroslider = () => {
-  const [current,setCurrent] = useState(0);
-  const slideList = [imgUrl,imgFive,imgSix,imgTwo,imgThree,imgFour];
+  const [current, setCurrent] = useState(0);
+  const slideList = [imgUrl, imgFive, imgSix, imgTwo, imgThree, imgFour];
 
-
-  useEffect(()=>{
-    setTimeout(()=> {
-      if(current >= slideList.length-1){
+  useEffect(() => {
+    setTimeout(() => {
+      if (current >= slideList.length - 1) {
         setCurrent(0);
-      }
-      else{
+      } else {
         setCurrent(current + 1);
       }
-      return ()=>{}
-    },slideDelay)
-  },[current])
+      return () => {};
+    }, slideDelay);
+  }, [current]);
 
   return (
     <HeroContainer>
-        <div className="slider">
-        {slideList.map((slide,index)=>{
-          return(<img key={index} className={index === current ? 'slide active' : 'slide'} src={slide} alt="" />)
+      <div className="slider">
+        {slideList.map((slide, index) => {
+          return (
+            <img
+              key={index}
+              className={index === current ? "slide active" : "slide"}
+              src={slide}
+              alt=""
+            />
+          );
         })}
-
-        </div>
-        <h1>CHOOSING A MOVIE HAS<br/> NEVER BEEN EASIER.</h1>
-        <p>Stop scrolling hours only to find a movie you do not like. <br/>Take the test and let it decide for you.</p>
-        <Link className="submitbtn" to="/movietest">Take The Test</Link>
+      </div>
+      <h1>
+        CHOOSING A MOVIE HAS
+        <br /> NEVER BEEN EASIER.
+      </h1>
+      <p>
+        Stop scrolling hours only to find a movie you do not like. <br />
+        Take the test and let it decide for you.
+      </p>
+      <Link className="submitbtn" to="/movietest">
+        Take The Test
+      </Link>
     </HeroContainer>
   );
 };
 
-
 const HeroContainer = styled.div`
-  background: black ;
-  min-width:100%;
-  min-height:100vh;
-  z-index:1;
+  background: black;
+  min-width: 100%;
+  min-height: 100vh;
+  z-index: 1;
   position: relative;
-  margin:0 auto;
-  
-  margin-top: -5rem;
-  .slider{
-    height:650px;
-    position:relative;
-    display:flex;
+  margin: 0 auto;
+
+   margin-top: -3rem; 
+  .slider {
+    height: 720px;
+    position: relative;
+    display: flex;
     justify-content: flex-start;
-    margin:5rem auto;
-    width:683px;
-    
+    margin: 5rem auto;
+    width: 80%;
+
     overflow: hidden;
     transition: all 0.4s linear;
+  }
+  @media (max-width:992px){
+    .slider{
+      height: 400px;
+    }
+  }
+  img {
+    width: 100%;
+  }
+  .slide {
+    position: absolute;
+    height: 100%;
+    opacity: 0;
+    left: 0;
+    transition: all 0.4s linear;
+  }
+  .slide.active {
+    opacity: 1 !important;
+    transition: all 0.4s linear;
+  }
 
-  }
-  img{
-    width:100%;
-  }
-  .slide{
-    
-    position:absolute;
-    height:100%;
-    opacity:0;
-    left:0;
-    transition: all 0.4s linear;
-  }
-  .slide.active{
-    opacity:1 !important;
-    transition: all 0.4s linear;
-  }
-  
   h1 {
-    z-index:0;
+    z-index: 0;
     text-align: left;
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 10%;
     font-size: 48px;
     line-height: 60px;
-    background: transparent;
+    background: rgba(0,0,0,0.6);
     color: white;
+    padding:6px;
   }
-  p{
-    position:absolute;
-    top:30%;
-    left:10%;
-    color:white;
+  @media (max-width:992px){
+    .slider h1{
+      font-size:24px;
+      line-height: 30px;
+      top:15%;
+      
+    }
   }
-  .submitbtn{
-    background-color: #B70304;
-    color:white;
-    position:absolute;
-    top:40%;
-    left:10%;
-    font-size:32px;
+  p {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding:6px;
+  }
+  .submitbtn {
+    background-color: #b70304;
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    font-size: 32px;
     padding: 8px 16px;
     border-radius: 4px;
-    cursor:pointer;
-    border:none;
+    cursor: pointer;
+    border: none;
   }
-  .submitbtn:hover{
+  .submitbtn:hover {
     background-color: #ed8554;
   }
 
-  @media (max-width:992px){
+  @media (max-width: 992px) {
     height: 600px;
-    .slider{
-      max-width:95vw;
-      height:600px;
-      margin:10rem auto;
+    .slider {
+      max-width: 95vw;
+      height: 600px;
+      margin: 10rem auto;
       margin-bottom: 0;
     }
-    .slide{
-      height:auto;
+    .slide {
+      height: auto;
     }
-    h1{
-      font-size:40px;
-      line-height:48px;
-      top:10%;
+    h1 {
+      font-size: 40px;
+      line-height: 48px;
+      top: 10%;
     }
-    p{
-      top:40%;
+    p {
+      top: 40%;
     }
-    .submitbtn{
-      top:60%;
+    .submitbtn {
+      top: 60%;
     }
   }
-
 `;
 
 export default Heroslider;

@@ -4,19 +4,14 @@ import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import blogImg from "../assets/blogimg.png";
 import blogImgFront from "../assets/blogimgfront.png";
-import exampleBlogImg from "../assets/wallpaperflare-cropped.png";
 import { Link } from "react-router-dom";
-import movie1 from "../assets/blogpics/movie1.jpg";
-import movie2 from "../assets/blogpics/movie2.jpg";
-import movie3 from "../assets/blogpics/movie3.jpg";
-import movie4 from "../assets/blogpics/movie4.jpg";
-import movie5 from "../assets/blogpics/movie5.jpg";
-import movie6 from "../assets/blogpics/movie6.jpg";
-import movie7 from "../assets/blogpics/movie7.jpg";
+import movie1 from "../assets/blogpics/memento_poster.png";
+import movie2 from "../assets/blogpics/se7en_poster.png";
+import movie3 from "../assets/blogpics/the_fountain.png";
 
 const localBlogUrl = "http://localhost:3000/api/v1/blog";
 const prodUrl = "https://cinemasuggest.com/api/v1/blog";
-const pics = [movie1, movie2, movie3, movie4, movie5, movie6, movie7];
+const pics = [movie1, movie2, movie3];
 
 const BlogPage = () => {
   const [blogContent, setBlogContent] = useState([]);

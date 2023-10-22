@@ -1,32 +1,27 @@
 {
   "files": {
     "main.css": "/static/css/main.8657339d.css",
-    "main.js": "/static/js/main.08c5065c.js",
-    "static/media/movie1.jpg": "/static/media/movie1.c245e7c19fb231cb7384.jpg",
-    "static/media/movie3.jpg": "/static/media/movie3.288c8c3e6b5d466dde06.jpg",
-    "static/media/cinema.jpg": "/static/media/cinema.0d39ef3a36e114da10d1.jpg",
-    "static/media/movie4.jpg": "/static/media/movie4.e086c17796bd5722b983.jpg",
-    "static/media/movie7.jpg": "/static/media/movie7.cbe5ec1d3514e0a0ea50.jpg",
-    "static/media/movie5.jpg": "/static/media/movie5.1a9b35ccbf9d6de64d7a.jpg",
-    "static/media/movie.jpg": "/static/media/movie.c63ed04a2ea4bc383ad7.jpg",
-    "static/media/slider5.png": "/static/media/slider5.d8644f4bf4d25b67ca00.png",
-    "static/media/movie2.jpg": "/static/media/movie2.d9e1d4e2b372cc55b8e2.jpg",
-    "static/media/slider4.png": "/static/media/slider4.831b57b78b571c4d2f88.png",
+    "main.js": "/static/js/main.59dce28f.js",
+    "static/media/design_3.png": "/static/media/design_3.369dc23d1581b8bbe307.png",
+    "static/media/design_6.png": "/static/media/design_6.1cf0abe2ce71dfc48fc0.png",
+    "static/media/design_2.png": "/static/media/design_2.41b2e37bbb47a08ef3e0.png",
+    "static/media/design_1.png": "/static/media/design_1.cbf65ba14f96a65fdb3f.png",
+    "static/media/design_5.png": "/static/media/design_5.d3b10d06ef46c6a78312.png",
     "static/media/computer.png": "/static/media/computer.9dc1b521a06503fb29f4.png",
+    "static/media/design_4.png": "/static/media/design_4.0c7d0713cd94f387f636.png",
     "static/media/blogimgfront.png": "/static/media/blogimgfront.c9383657f6ff32ccd152.png",
-    "static/media/movie6.jpg": "/static/media/movie6.114057837b6127712023.jpg",
-    "static/media/slider3.png": "/static/media/slider3.6eaba03ed1b8e3ad8307.png",
-    "static/media/wallpaperflare-cropped.png": "/static/media/wallpaperflare-cropped.d62925a158bb52acfaad.png",
+    "static/media/se7en_poster.png": "/static/media/se7en_poster.bbec9b12a7c21afea4e1.png",
+    "static/media/the_fountain.png": "/static/media/the_fountain.3f370678183c288b6bf9.png",
+    "static/media/memento_poster.png": "/static/media/memento_poster.5dd20e187135f9b5ef92.png",
     "static/media/joker.png": "/static/media/joker.39a4e4db7132208fcd7f.png",
-    "static/media/spiderman.jpg": "/static/media/spiderman.b881dcf1b86ffefdb270.jpg",
     "static/media/blogimg.png": "/static/media/blogimg.955b51cd75137734f2be.png",
     "static/media/icon.png": "/static/media/icon.75ffb8524264c706c966.png",
     "index.html": "/index.html",
     "main.8657339d.css.map": "/static/css/main.8657339d.css.map",
-    "main.08c5065c.js.map": "/static/js/main.08c5065c.js.map"
+    "main.59dce28f.js.map": "/static/js/main.59dce28f.js.map"
   },
   "entrypoints": [
     "static/css/main.8657339d.css",
-    "static/js/main.08c5065c.js"
+    "static/js/main.59dce28f.js"
   ]
 }

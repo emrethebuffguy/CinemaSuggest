@@ -568,7 +568,7 @@ const Wrapper = styled.div`
     border-radius: 10px;
     background-color: #b70304;
     color: white;
-    margin-left: 20%;
+    
     font-size: 24px;
     cursor: pointer;
     margin-bottom: 1rem;
@@ -578,10 +578,14 @@ const Wrapper = styled.div`
       width: 60%;
     }
   }
+
   .submitbtns{
+    width:40%;
+    margin:1rem auto;
     display:flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
   .missing {
     margin-left: 20%;

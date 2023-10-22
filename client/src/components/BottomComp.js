@@ -9,8 +9,7 @@ const BottomComp = () => {
         <div>
           <h4>
             It’s really simple! Just answer the questions and let CinemaSuggest
-            give you the best movie suggestions. For further explanations, you
-            can always hover over the information buttons on questions. If you
+            give you the best movie suggestions. If you
             watched the suggested movies just mark them as ‘watched’ or discard
             them and CinemaSuggest will come up with new ones.
           </h4>
@@ -40,21 +39,22 @@ const BottomCompContainer = styled.div`
     font-size: 24px;
     line-height: 30px;
     color: white;
-    margin-top:-5rem;
+    margin-top:-6rem;
   }
 
   .computer-section {
     display: flex;
     align-items: center;
   }
+
   img {
     width: 700px;
   }
  .sbmt {
     background-color: #b70304;
     color: white;
-    
-    top: 40%;
+    margin-top:16px;
+    top: 60%;
     left: 10%;
     font-size: 32px;
     padding: 8px 16px;
