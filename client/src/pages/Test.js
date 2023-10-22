@@ -526,26 +526,28 @@ const Test = () => {
             Doesn't Matter
           </button>
         </TestContainer>
-        <button className="submitbtn" onClick={handleSave}>
-          SAVE PREFERENCES
-        </button>
-        <p className="missing">
-          {missingRequired
-            ? "Genre, Popularity and Language Fields are mandatory."
-            : null}
-        </p>
-        <Link
-          style={
-            submitted
-              ? null
-              : { pointerEvents: "none", backgroundColor: "gray" }
-          }
-          state={passData}
-          to="/results"
-          className="submitbtn"
-        >
-          Find Me Movies
-        </Link>
+        <div className="submitbtns">
+          <button className="submitbtn" onClick={handleSave}>
+            SAVE PREFERENCES
+          </button>
+          <p className="missing">
+            {missingRequired
+              ? "Genre, Popularity and Language Fields are mandatory."
+              : null}
+          </p>
+          <Link
+            style={
+              submitted
+                ? null
+                : { pointerEvents: "none", backgroundColor: "gray" }
+            }
+            state={passData}
+            to="/results"
+            className="submitbtn"
+          >
+            Find Me Movies
+          </Link>
+        </div>
       </Wrapper>
       <Footer />
     </>
@@ -571,6 +573,16 @@ const Wrapper = styled.div`
     cursor: pointer;
     margin-bottom: 1rem;
   }
+  @media (max-width: 992px) {
+    .submitbtn {
+      width: 60%;
+    }
+  }
+  .submitbtns{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .missing {
     margin-left: 20%;
     color: white;
@@ -585,6 +597,9 @@ const Wrapper = styled.div`
   .dmbtn:hover {
     background-color: #b70304;
     color: White;
+  }
+  .dmbtn:focus {
+    border: 2px solid red !important;
   }
 `;
 
@@ -746,7 +761,7 @@ const DoubleTestContainer = styled.div`
     display: inline;
   }
   .individual {
-    width:80%;
+    width: 80%;
     border-radius: 12px;
     padding: 2px;
     background-color: gray;

@@ -6,17 +6,17 @@ import blogImg from "../assets/blogimg.png";
 import blogImgFront from "../assets/blogimgfront.png";
 import exampleBlogImg from "../assets/wallpaperflare-cropped.png";
 import { Link } from "react-router-dom";
-import movie1 from "../assets/blogpics/movie1.jpg"
-import movie2 from "../assets/blogpics/movie2.jpg"
-import movie3 from "../assets/blogpics/movie3.jpg"
-import movie4 from "../assets/blogpics/movie4.jpg"
-import movie5 from "../assets/blogpics/movie5.jpg"
-import movie6 from "../assets/blogpics/movie6.jpg"
-import movie7 from "../assets/blogpics/movie7.jpg"
+import movie1 from "../assets/blogpics/movie1.jpg";
+import movie2 from "../assets/blogpics/movie2.jpg";
+import movie3 from "../assets/blogpics/movie3.jpg";
+import movie4 from "../assets/blogpics/movie4.jpg";
+import movie5 from "../assets/blogpics/movie5.jpg";
+import movie6 from "../assets/blogpics/movie6.jpg";
+import movie7 from "../assets/blogpics/movie7.jpg";
 
-const localBlogUrl = "http://localhost:5000/api/v1/blog";
-const prodUrl = "https://cinemasuggest.com/api/v1/blog"
-const pics = [movie1,movie2,movie3,movie4,movie5,movie6,movie7]
+const localBlogUrl = "http://localhost:3000/api/v1/blog";
+const prodUrl = "https://cinemasuggest.com/api/v1/blog";
+const pics = [movie1, movie2, movie3, movie4, movie5, movie6, movie7];
 
 const BlogPage = () => {
   const [blogContent, setBlogContent] = useState([]);
@@ -42,7 +42,7 @@ const BlogPage = () => {
         <div className="blog-img-container">
           <img src={blogImg} alt="our blog image" />
           <img src={blogImgFront} alt="blog image front" />
-          <h2>Welcome To The CinemaSuggest Blog</h2>
+          <h2 className="white">Welcome To The CinemaSuggest Blog</h2>
         </div>
 
         <div className="blog-articles">
@@ -53,8 +53,14 @@ const BlogPage = () => {
                   <img src={pics[index]} alt="blog showing " />
                   <div className="blog-info">
                     <h3>{item.title}</h3>
-                    <p>{item.paragraphs[0].slice(0, 40)}...</p>
-                    <Link to={`/blog/${index}`} state={item} className="button-article">Continue Reading...</Link>
+                    <p>{item.paragraphs[0].slice(0, 120)}...</p>
+                    <Link
+                      to={`/blog/${index}`}
+                      state={item}
+                      className="button-article"
+                    >
+                      Continue Reading...
+                    </Link>
                   </div>
                 </div>
               );
@@ -70,6 +76,10 @@ const BlogPage = () => {
 };
 
 const BlogPageContainer = styled.div`
+  .white {
+    font-size: 5rem;
+    color: white;
+  }
   .blog-img-container {
     width: 70%;
     position: relative;
@@ -109,14 +119,14 @@ const BlogPageContainer = styled.div`
   }
   .blog-article img {
     height: 100%;
-    width: 30%;
+    width: 45%;
   }
   .blog-info {
     padding: 8px;
     display: flex;
     flex-direction: column;
-    flex-direction: column;
-    justify-content: space-between;
+
+    justify-content: space-evenly;
   }
   .blog-info h3,
   .blog-info p {
