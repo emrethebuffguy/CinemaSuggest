@@ -11,9 +11,9 @@ const HomeContent = () => {
 
 const HomeContentDiv = styled.div`
   width: 992px;
-  height: 400px;
+  height: 700px;
   margin: 1rem auto;
-
+  
   img {
     width: 100%;
   }
