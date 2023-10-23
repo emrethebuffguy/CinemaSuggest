@@ -152,7 +152,7 @@ const BlogPageContainer = styled.div`
       margin-top: 350px;
     }
     .button-article {
-      width: 200px;
+      width: 150px;
     }
     .blog-article {
       flex-direction: row;
