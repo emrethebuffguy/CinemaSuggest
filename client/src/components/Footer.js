@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="social">
            <a href="#"> <AiFillFacebook className="social-icon"/></a>
            <a href="#"> <FaTiktok className="social-icon"/></a>
-           <a href="#"> <BsInstagram className="social-icon"/></a>
+           <a href="https://www.instagram.com/cinemasuggest.info/"> <BsInstagram className="social-icon"/></a>
         </div>
         <div className="sitemap">
             <h3>Sitemap</h3>

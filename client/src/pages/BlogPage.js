@@ -71,6 +71,8 @@ const BlogPage = () => {
 };
 
 const BlogPageContainer = styled.div`
+  display:flex;
+  flex-direction: column;
   .blog-img-container {
     width: 70%;
     position: relative;
@@ -81,7 +83,7 @@ const BlogPageContainer = styled.div`
   }
   .blog-img-container img {
     position: absolute;
-    width: 100%;
+    width: auto;
   }
 
   .blog-img-container h2 {
@@ -142,15 +144,19 @@ const BlogPageContainer = styled.div`
     .blog-img-container h2 {
       font-size: 1.5rem;
     }
-    .blog-img-container {
-      width: 90%;
+    .blog-img-container { 
+      width: 90%; 
+    } 
+    .blog-img-container img{
+      height:auto;
+      width:auto;
     }
 
-    .blog-articles {
-      width: 95%;
-      grid-template-columns: 1fr;
-      margin-top: 350px;
-    }
+    .blog-articles { 
+      width: 95%; 
+      grid-template-columns: 1fr; 
+      margin-top: 350px; 
+    } 
     .button-article {
       width: 150px;
     }
