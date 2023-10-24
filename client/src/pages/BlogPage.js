@@ -76,6 +76,8 @@ const BlogPageContainer = styled.div`
   h2{
     font-size:3rem;
     margin-bottom: 1rem;
+    color:white;
+    margin-left: 15%;
   }
 
   .blog-img-container {
