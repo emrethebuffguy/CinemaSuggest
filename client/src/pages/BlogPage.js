@@ -34,11 +34,11 @@ const BlogPage = () => {
     <>
       <Navbar />
       <BlogPageContainer>
-        <div className="blog-img-container">
+        {/* <div className="blog-img-container">
           <img src={blogImg} alt="our blog image" />
           <img src={blogImgFront} alt="blog image front" />
-          <h2>Welcome To The CinemaSuggest Blog</h2>
-        </div>
+        </div> */}
+        <h2>Welcome To The CinemaSuggest Blog</h2>
 
         <div className="blog-articles">
           {blogContent ? (
@@ -73,6 +73,11 @@ const BlogPage = () => {
 const BlogPageContainer = styled.div`
   display:flex;
   flex-direction: column;
+  h2{
+    font-size:3rem;
+    margin-bottom: 1rem;
+  }
+
   .blog-img-container {
     width: 70%;
     position: relative;
@@ -141,7 +146,7 @@ const BlogPageContainer = styled.div`
   }
 
   @media (max-width: 992px) {
-    .blog-img-container h2 {
+    h2 {
       font-size: 1.5rem;
     }
     .blog-img-container { 
