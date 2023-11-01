@@ -18,7 +18,6 @@ import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import useAnalyticsEventTracker from '../components/useAnalyticsEventTracker';
 
 
 const Test = () => {
@@ -181,7 +180,7 @@ const Test = () => {
 
   //TO - DO
   // deal with checkboxes.
-  const gaEventTracker = useAnalyticsEventTracker('Test');
+  
   return (
     <>
       <Navbar />
@@ -547,7 +546,7 @@ const Test = () => {
             state={passData}
             to="/results"
             className="submitbtn"
-            onClick={()=>{gaEventTracker('test')}}
+            
           >
             Find Me Movies
           </Link>

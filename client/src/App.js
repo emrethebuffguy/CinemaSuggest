@@ -9,14 +9,10 @@ import BlogPage from "./pages/BlogPage";
 import WeeklyQuiz from "./pages/WeeklyQuiz";
 import BlogArticle from "./pages/BlogArticle";
 import QuizResults from "./pages/QuizResults";
-import ReactGA from 'react-ga4';
 
-const TRACKING_ID = "G-WVTNTQ239T";
-ReactGA.initialize(TRACKING_ID);
+
 function App() {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+  
   useEffect(() => {
     document.title = 'Cinemasuggest - Find movies you like within munites!';
   }, []);
