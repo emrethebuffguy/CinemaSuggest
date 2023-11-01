@@ -9,6 +9,7 @@ import movie1 from "../assets/blogpics/memento_poster.png";
 import movie2 from "../assets/blogpics/se7en_poster.png";
 import movie3 from "../assets/blogpics/the_fountain.png";
 
+
 const localBlogUrl = "http://localhost:3000/api/v1/blog";
 const prodUrl = "https://cinemasuggest.com/api/v1/blog";
 const pics = [movie2, movie1, movie3];
